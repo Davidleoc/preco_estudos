@@ -30,10 +30,6 @@
    "campos": {},
    "trechos": []
   },
-  "terraform#0": {
-   "campos": {},
-   "trechos": []
-  },
   "mongodb_dba#0": {
    "campos": {},
    "trechos": []
@@ -50,7 +46,7 @@
   },
   "cambly#0": {
    "campos": {
-    "planos_de_por": "R$98 /mês R$55 | R$273 /mês R$154 | R$398 /mês R$224"
+    "planos_de_por": null
    },
    "trechos": []
   },
