@@ -1,0 +1,170 @@
+{
+ "atualizado_em": "2026-10-16",
+ "fontes": {
+  "cka#0": {
+   "campos": {
+    "preco_prova_usd": "445",
+    "banner_promo": "Cybersecurity Awareness Month: Save Up to 40%!"
+   },
+   "trechos": [
+    "…KA) - Linux Foundation - Education Skip to main content 🛡️ Cybersecurity Awareness Month: Save Up to 40%! ➜ SECURE SAVINGS NOW Training & Certification Catalog See Full Catalog Certifications Instructor-led Cours…",
+    "…Great exam as a new Kubernetes beginner. The feeling of doing some tricky tasks with very limited time, reflecting real world work situations in an exam is what many other certification exams lack these days. I f…",
+    "…onals. 1 2 3 4 5 6 7 8 9 $445 Exam only Enroll Today Get a Quote Bundle & Save Best Value Save 40% on CKA with THRIVE-ONE Annual Subscription Bundle $625 Exam + Full Access Subscription Buy Value Bundle Bun…"
+   ]
+  },
+  "lfcs#0": {
+   "campos": {
+    "preco_prova_usd": "445",
+    "banner_promo": "Cybersecurity Awareness Month: Save Up to 40%!"
+   },
+   "trechos": [
+    "…CS) - Linux Foundation - Education Skip to main content 🛡️ Cybersecurity Awareness Month: Save Up to 40%! ➜ SECURE SAVINGS NOW Training & Certification Catalog See Full Catalog Certifications Instructor-led Cours…",
+    "…nd it. 1 2 3 4 5 6 7 8 9 $445 Exam only Enroll Today Get a Quote Bundle & Save Best Value Save 40% on LFCS with THRIVE-ONE Annual Subscription Bundle $625 Exam + Full Access Subscription Buy Value Bundle Bu…"
+   ]
+  },
+  "rhcsa#0": {
+   "campos": {},
+   "trechos": []
+  },
+  "rhce#0": {
+   "campos": {},
+   "trechos": []
+  },
+  "terraform#0": {
+   "campos": {},
+   "trechos": []
+  },
+  "mongodb_dba#0": {
+   "campos": {},
+   "trechos": []
+  },
+  "pca#0": {
+   "campos": {
+    "preco_prova_usd": "250",
+    "banner_promo": "Cybersecurity Awareness Month: Save Up to 40%!"
+   },
+   "trechos": [
+    "…CA) - Linux Foundation - Education Skip to main content 🛡️ Cybersecurity Awareness Month: Save Up to 40%! ➜ SECURE SAVINGS NOW Training & Certification Catalog See Full Catalog Certifications Instructor-led Cours…",
+    "…guage. 1 2 3 4 5 6 7 8 9 $250 Exam only Enroll Today Get a Quote Bundle & Save Best Value Save 40% on PCA with the THRIVE-ONE Annual Subscription Bundle $495 Exam + Full Access Subscription Buy Value Bundle…"
+   ]
+  },
+  "cambly#0": {
+   "campos": {
+    "planos_de_por": "R$98 /mês R$55 | R$273 /mês R$154 | R$398 /mês R$224"
+   },
+   "trechos": []
+  },
+  "impacta_cloud_devops#0": {
+   "campos": {
+    "parcela_brl": "285,43",
+    "parcelas": "36",
+    "desconto": "30% OFF"
+   },
+   "trechos": [
+    "…Todos os direitos reservados. Powered by J&A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…"
+   ]
+  },
+  "impacta_infra_cloud#0": {
+   "campos": {
+    "parcela_brl": "285,43",
+    "parcelas": "36",
+    "desconto": "30% OFF"
+   },
+   "trechos": [
+    "…Todos os direitos reservados. Powered by J&A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…"
+   ]
+  },
+  "uninter#0": {
+   "campos": {},
+   "trechos": []
+  }
+ },
+ "cupons_lf": [
+  "COMTECHIES20",
+  "DCUBE30",
+  "OCT26CYBERCT",
+  "OCT26NONCYBERCT",
+  "OCT26THRIVECT"
+ ],
+ "historico": {
+  "cka#0.preco_prova_usd": [
+   {
+    "data": "2026-10-16",
+    "valor": "445"
+   }
+  ],
+  "cka#0.banner_promo": [
+   {
+    "data": "2026-10-16",
+    "valor": "Cybersecurity Awareness Month: Save Up to 40%!"
+   }
+  ],
+  "lfcs#0.preco_prova_usd": [
+   {
+    "data": "2026-10-16",
+    "valor": "445"
+   }
+  ],
+  "lfcs#0.banner_promo": [
+   {
+    "data": "2026-10-16",
+    "valor": "Cybersecurity Awareness Month: Save Up to 40%!"
+   }
+  ],
+  "pca#0.preco_prova_usd": [
+   {
+    "data": "2026-10-16",
+    "valor": "250"
+   }
+  ],
+  "pca#0.banner_promo": [
+   {
+    "data": "2026-10-16",
+    "valor": "Cybersecurity Awareness Month: Save Up to 40%!"
+   }
+  ],
+  "cambly#0.planos_de_por": [
+   {
+    "data": "2026-10-16",
+    "valor": "R$98 /mês R$55 | R$273 /mês R$154 | R$398 /mês R$224"
+   }
+  ],
+  "impacta_cloud_devops#0.parcela_brl": [
+   {
+    "data": "2026-10-16",
+    "valor": "285,43"
+   }
+  ],
+  "impacta_cloud_devops#0.parcelas": [
+   {
+    "data": "2026-10-16",
+    "valor": "36"
+   }
+  ],
+  "impacta_cloud_devops#0.desconto": [
+   {
+    "data": "2026-10-16",
+    "valor": "30% OFF"
+   }
+  ],
+  "impacta_infra_cloud#0.parcela_brl": [
+   {
+    "data": "2026-10-16",
+    "valor": "285,43"
+   }
+  ],
+  "impacta_infra_cloud#0.parcelas": [
+   {
+    "data": "2026-10-16",
+    "valor": "36"
+   }
+  ],
+  "impacta_infra_cloud#0.desconto": [
+   {
+    "data": "2026-10-16",
+    "valor": "30% OFF"
+   }
+  ]
+ },
+ "dolar": 5.054452
+}

@@ -1,0 +1,249 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Radar de Certificações</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--txt:#1b1f24;--muted:#5d6670;--line:#e2e5e9;--acc:#1f6feb;--ok:#1a7f37;--okbg:#e6f4ea;--warn:#b35900;--warnbg:#fff4e5;--chip:#eef2f7;
+--cert:#1f6feb;--certbg:#e8f0fe;--ing:#8250df;--ingbg:#f3ecff;--pos:#bf3989;--posbg:#fdeef6}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1216;--card:#171b21;--txt:#e6e9ed;--muted:#9aa4af;--line:#2a313a;--acc:#58a6ff;--ok:#3fb950;--okbg:#12261a;--warn:#e3a043;--warnbg:#2b2112;--chip:#212833;
+--cert:#58a6ff;--certbg:#132238;--ing:#b392f0;--ingbg:#231a33;--pos:#f778ba;--posbg:#2e1525}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1150px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.7rem;margin:0 0 4px}
+.muted{color:var(--muted);font-size:.9em}a{color:var(--acc)}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}nav a{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;text-decoration:none;color:var(--txt);font-size:.9em}
+.secao{display:flex;align-items:center;gap:12px;margin:36px 0 12px}.secao .ic{font-size:1.6rem;width:46px;height:46px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line)}
+.secao h2{margin:0;font-size:1.25rem}.secao p{margin:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:8px}
+.kpi,.card,.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi{display:flex;gap:12px;align-items:center}.kpi .ic{font-size:1.8rem}.kpi b{display:block;font-size:1.3rem;line-height:1.2}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;gap:10px;border-top:4px solid var(--c,var(--line))}
+.cat-certificacao{--c:var(--cert);--cbg:var(--certbg)}.cat-ingles{--c:var(--ing);--cbg:var(--ingbg)}.cat-pos{--c:var(--pos);--cbg:var(--posbg)}
+.card header{display:flex;gap:12px;align-items:flex-start}.avatar{font-size:1.5rem;width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--cbg)}
+.card h3{margin:0 0 6px;font-size:1.02rem;line-height:1.3}.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--chip);border-radius:999px;padding:1px 9px;font-size:.78em;white-space:nowrap}.chip.destaque{background:var(--cbg);color:var(--c);font-weight:600}
+.preco{display:flex;align-items:center;gap:10px;background:var(--cbg);border-radius:10px;padding:8px 12px;flex-wrap:wrap}
+.preco-ic{font-size:1.4rem}.preco b{font-size:1.25rem;display:block;line-height:1.1}.brl{font-size:.88em;color:var(--muted)}
+.selo{margin-left:auto;font-size:.75em;background:var(--card);border-radius:999px;padding:2px 8px;color:var(--muted)}.selo.ok{color:var(--ok)}
+table{border-collapse:collapse;width:100%;font-size:.92em}th{text-align:left;color:var(--muted);font-weight:500;padding:3px 10px 3px 0;vertical-align:top;white-space:nowrap}td{padding:3px 0}
+h4{margin:10px 0 4px;font-size:.9rem}ul{margin:0;padding-left:20px}li{margin:3px 0}ul.sem-marca{list-style:none;padding-left:0}
+.visto{background:var(--chip);border-radius:10px;padding:4px 12px 8px}.trecho{color:var(--muted);font-size:.86em}
+.erro{color:var(--warn)}details summary{cursor:pointer;color:var(--acc);font-weight:500}.bloco{margin-top:6px}
+.botao{margin-top:auto;align-self:flex-start;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:.88em}
+.novidade{list-style:none;padding:0;margin:0}.novidade li{padding:6px 0;border-bottom:1px solid var(--line)}.novidade li:last-child{border:0}
+.vazio{color:var(--ok);background:var(--okbg);border-radius:8px;padding:8px 12px;margin:0}
+code{background:var(--warnbg);color:var(--warn);padding:2px 8px;border-radius:6px;font-weight:700;font-size:.95em}
+.promo{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.promo:first-child{border-top:0}.promo .ic{font-size:1.4rem}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85em;color:var(--muted);margin-top:8px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}th{white-space:normal}}
+</style></head><body><main>
+<h1>📡 Radar de Certificações</h1>
+<div class="muted">🕗 Atualizado em 16/10/2026 20:07 (horário de Brasília) · 👤 Sysadmin Linux (CentOS/Ubuntu) com atuação DevOps/SRE: Ansible, Rundeck, N8N, Docker, Kubernetes, Nagios XI, MongoDB, PostgreSQL, Python e Bash.
+</div>
+<nav><a href='#novidades'>🆕 Novidades</a><a href='#cupons'>🎟️ Cupons</a><a href='#certificacao'>🎓 Certificações</a><a href='#ingles'>🗣️ Inglês</a><a href='#pos'>🏛️ Pós-graduação</a></nav>
+<div class="kpis"><div class='kpi'><span class='ic'>💵</span><div><span class='muted'>Dólar hoje com IOF</span><b>R$ 5,23</b><span class='muted'>comercial R$ 5,05</span></div></div><div class='kpi'><span class='ic'>🎟️</span><div><span class='muted'>Fim do cupom de outubro da Linux Foundation (35%)</span><b>em 7 dias</b><span class='muted'>23/10/2026</span></div></div><div class='kpi'><span class='ic'>🛍️</span><div><span class='muted'>Black Friday</span><b>em 42 dias</b><span class='muted'>27/11/2026</span></div></div><div class='kpi'><span class='ic'>💻</span><div><span class='muted'>Cyber Monday (maior promoção do ano da Linux Foundation)</span><b>em 45 dias</b><span class='muted'>30/11/2026</span></div></div><div class='kpi'><span class='ic'>💻</span><div><span class='muted'>Fim provável da Cyber Week LF (em 2025 foi até 09/12)</span><b>em 54 dias</b><span class='muted'>09/12/2026</span></div></div></div>
+<div class='secao' id='novidades'><span class='ic'>🆕</span><div><h2>Novidades de hoje</h2><p class='muted'>O que mudou desde a verificação anterior: preço, cupom ou texto de promoção.</p></div></div>
+<div class="box"><p class='vazio'>✅ Nenhuma mudança desde a última verificação.</p></div>
+<div class='secao' id='cupons'><span class='ic'>🎟️</span><div><h2>Cupons Linux Foundation ativos</h2><p class='muted'>Códigos de desconto para CKA, LFCS, PCA e bundles. Use no checkout do site da Linux Foundation.</p></div></div>
+<div class="box"><div class='promo'><span class='ic'>📣</span><div><b>Banner no site oficial da Linux Foundation</b><br>Cybersecurity Awareness Month: Save Up to 40%!</div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[UpTo 47% OFF] Linux Foundation Cyber Security Sale is Live (Limited Time offer)</b><br>Cupom: <code>OCT26NONCYBERCT</code> <code>OCT26CYBERCT</code> <code>OCT26THRIVECT</code><br><span class='muted'>Get a flat 35% discount on individual certifications like CKA, CKD, CKS, etc. ⏰ Note: Offer ends on October 23rd. So hurry up and lock in the huge discount.</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[Up To 38% OFF] Linux Foundation DevOps Sale (Limited Sale)</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>As part of the exclusive DevOps sale, get a flat 30% discount on all the Linux Foundation certifications, training programs, skill crews, and IT professional programs, including all bundles like the Kubestronaut. ⏰ Note: Offer ends soon. So lock in the price.</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[20% OFF] KubeCon + CloudNativeCon North America 2026</b><br>Cupom: <code>COMTECHIES20</code><br><span class='muted'>KubeCon + CloudNativeCon North America is coming to Atlanta, November 10-1. ⏰ Act Fast - code expires soon!</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[40% OFF] Kubestronaut Bundle Discounts</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>If you are looking for the Kubestronaut program, use code DCUBE30 with the following bundle options. </span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[40% OFF] Golden Kubestronaut Bundle Coupon</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>If you are a Kubestronaut, you can go for the Golden Kubestronaut Bundle </span></div></div>
+<p class="muted">Fonte: <a href="https://github.com/techiescamp/linux-foundation-coupon">Linux Foundation Coupons (Updated For October 2026)</a>.
+Confirme o desconto no checkout antes de pagar.</p></div>
+<div class='secao' id='certificacao'><span class='ic'>🎓</span><div><h2>Certificações</h2><p class='muted'>Provas que comprovam conhecimento técnico. Preço em dólar, voucher vale 12 meses.</p></div></div><div class='grid'>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>CKA — Certified Kubernetes Administrator</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 1</span><span class='chip'>🏢 Linux Foundation / CNCF</span><span class='chip'>🖥️ Prova prática</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 445</b><span class='brl'>≈ R$ 2.328 com IOF</span></div><span class='selo ok'>✔ lido do site hoje</span></div>
+  <table><tr><th>🧪 Formato</th><td>Prova prática no terminal (tarefas reais em clusters), online com fiscal remoto</td></tr><tr><th>⏱️ Duração</th><td>2 horas</td></tr><tr><th>✅ Aprovação</th><td>66%</td></tr><tr><th>📅 Validade</th><td>2 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês (há opção em outros idiomas, confira no agendamento)</td></tr><tr><th>📚 Tempo de estudo</th><td>8 a 10 semanas</td></tr><tr><th>💪 Você já tem</th><td>Configura clusters e dá suporte a aplicações no Kubernetes</td></tr></table>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>🏷️ <b>banner do site:</b> Cybersecurity Awareness Month: Save Up to 40%!</li><li class='trecho'>💬 “…KA) - Linux Foundation - Education Skip to main content 🛡️ Cybersecurity Awareness Month: Save Up to 40%! ➜ SECURE SAVINGS NOW Training &amp; Certification Catalog See Full Catalog Certifications Instructor-led Cours…”</li><li class='trecho'>💬 “…Great exam as a new Kubernetes beginner. The feeling of doing some tricky tasks with very limited time, reflecting real world work situations in an exam is what many other certification exams lack these days. I f…”</li><li class='trecho'>💬 “…onals. 1 2 3 4 5 6 7 8 9 $445 Exam only Enroll Today Get a Quote Bundle &amp; Save Best Value Save 40% on CKA with THRIVE-ONE Annual Subscription Bundle $625 Exam + Full Access Subscription Buy Value Bundle Bun…”</li></ul></div>
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>O voucher inclui 1 reteste grátis e 2 sessões do simulador killer.sh</li><li>O killer.sh é mais difícil que a prova real, então é um bom termômetro</li><li>Depois da compra você tem 12 meses para agendar</li><li>Pode consultar a documentação oficial do Kubernetes durante a prova</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>Troubleshooting de cluster, que é o maior peso da prova</li><li>Backup e restore do etcd</li><li>RBAC, NetworkPolicy, Gateway API</li><li>Helm e Kustomize</li><li>Velocidade no kubectl (imperativo, --dry-run=client -o yaml, aliases)</li></ul></div>
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Preço em dólar. No cartão entram IOF e câmbio</li><li>Exige webcam, documento com foto e ambiente silencioso e limpo</li></ul></div>
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>Curso do Mumshad Mannambeth (Udemy, compre em promoção)</li><li>Killercoda (cenários gratuitos) e killer.sh</li></ul></div>
+  </details>
+  <a class="botao" href="https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>LFCS — Linux Foundation Certified Sysadmin</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 2</span><span class='chip'>🏢 Linux Foundation</span><span class='chip'>🖥️ Prova prática</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 445</b><span class='brl'>≈ R$ 2.328 com IOF</span></div><span class='selo ok'>✔ lido do site hoje</span></div>
+  <table><tr><th>🧪 Formato</th><td>Prova prática no terminal (base Ubuntu), online com fiscal remoto</td></tr><tr><th>⏱️ Duração</th><td>2 horas</td></tr><tr><th>✅ Aprovação</th><td>~67%</td></tr><tr><th>📅 Validade</th><td>2 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês</td></tr><tr><th>📚 Tempo de estudo</th><td>4 a 6 semanas</td></tr><tr><th>💪 Você já tem</th><td>Linux no dia a dia, hardening, resolução de problemas</td></tr></table>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>🏷️ <b>banner do site:</b> Cybersecurity Awareness Month: Save Up to 40%!</li><li class='trecho'>💬 “…CS) - Linux Foundation - Education Skip to main content 🛡️ Cybersecurity Awareness Month: Save Up to 40%! ➜ SECURE SAVINGS NOW Training &amp; Certification Catalog See Full Catalog Certifications Instructor-led Cours…”</li><li class='trecho'>💬 “…nd it. 1 2 3 4 5 6 7 8 9 $445 Exam only Enroll Today Get a Quote Bundle &amp; Save Best Value Save 40% on LFCS with THRIVE-ONE Annual Subscription Bundle $625 Exam + Full Access Subscription Buy Value Bundle Bu…”</li></ul></div>
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Mesmas regras da CKA - 1 reteste grátis e simulador incluído</li><li>Costuma entrar em bundle com a CKA na Cyber Week</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>Ubuntu e netplan</li><li>LVM, RAID, quotas</li><li>NFS e montagens</li><li>Fazer tudo sem depender de busca na internet</li></ul></div>
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Vale a pena só se o bundle LFCS + CKA sair perto de 50% por prova</li></ul></div>
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>Objetivos oficiais da prova</li><li>KodeKloud e o seu homelab</li></ul></div>
+  </details>
+  <a class="botao" href="https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>RHCSA — Red Hat Certified System Administrator (EX200)</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 3</span><span class='chip'>🏢 Red Hat</span><span class='chip'>🖥️ Prova prática</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 500</b><span class='brl'>≈ R$ 2.616 com IOF</span></div><span class='selo'>ℹ valor de referência</span></div>
+  <table><tr><th>🧪 Formato</th><td>Prova prática em RHEL, remota ou em centro de testes</td></tr><tr><th>⏱️ Duração</th><td>~3 horas</td></tr><tr><th>✅ Aprovação</th><td>210 de 300 pontos</td></tr><tr><th>📅 Validade</th><td>3 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês (outros idiomas disponíveis em alguns locais)</td></tr><tr><th>📚 Tempo de estudo</th><td>5 a 7 semanas</td></tr><tr><th>💪 Você já tem</th><td>CentOS, que é da família Red Hat</td></tr></table>
+  
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Pré-requisito para a RHCE, que é a certificação de Ansible</li><li>Sem consulta à internet durante a prova</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>SELinux (contextos, booleans, portas)</li><li>Stratis, LVM, swap e montagens persistentes</li><li>podman e containers como serviço systemd</li><li>nmcli, firewalld, autofs</li><li>Recuperação de senha de root</li></ul></div>
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>A Red Hat dá menos desconto que a Linux Foundation</li><li>No Brasil, parceiros oficiais vendem em reais e às vezes parcelado. Vale cotar</li><li>O reteste normalmente NÃO vem incluído</li></ul></div>
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>Assinatura gratuita Red Hat Developer (RHEL liberado para lab)</li><li>Livros e vídeos de Sander van Vugt</li></ul></div>
+  </details>
+  <a class="botao" href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>RHCE — Red Hat Certified Engineer (EX294, Ansible)</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 4</span><span class='chip'>🏢 Red Hat</span><span class='chip'>🖥️ Prova prática</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 500</b><span class='brl'>≈ R$ 2.616 com IOF</span></div><span class='selo'>ℹ valor de referência</span></div>
+  <table><tr><th>🧪 Formato</th><td>Prova prática de automação com Ansible em RHEL</td></tr><tr><th>⏱️ Duração</th><td>~4 horas</td></tr><tr><th>✅ Aprovação</th><td>210 de 300 pontos</td></tr><tr><th>📅 Validade</th><td>3 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês</td></tr><tr><th>📚 Tempo de estudo</th><td>6 a 8 semanas depois da RHCSA</td></tr><tr><th>💪 Você já tem</th><td>Ansible em produção (atualização massiva de pacotes, integração com Nagios/NRPE)</td></tr></table>
+  
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>É a certificação de referência em Ansible. A Linux Foundation não tem prova de Ansible</li><li>O título RHCE só é concedido com a RHCSA ativa</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>Roles e collections, ansible-navigator</li><li>Ansible Vault</li><li>Templates Jinja2 e filtros</li><li>RHEL System Roles</li><li>Tudo sem acesso à internet</li></ul></div>
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Na prática são duas provas caras (RHCSA + RHCE)</li></ul></div>
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>Objetivos oficiais da EX294</li><li>Sander van Vugt (RHCE Ansible)</li></ul></div>
+  </details>
+  <a class="botao" href="https://www.redhat.com/en/services/training/ex294-red-hat-certified-engineer-rhce-exam-red-hat-enterprise-linux-9" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>HashiCorp Terraform Associate</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 5</span><span class='chip'>🏢 HashiCorp (IBM)</span><span class='chip'>📝 Múltipla escolha</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 70.5</b><span class='brl'>≈ R$ 369 com IOF</span></div><span class='selo'>ℹ valor de referência</span></div>
+  <table><tr><th>🧪 Formato</th><td>Múltipla escolha, online com fiscal remoto</td></tr><tr><th>⏱️ Duração</th><td>1 hora</td></tr><tr><th>✅ Aprovação</th><td>não divulgada</td></tr><tr><th>📅 Validade</th><td>2 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês</td></tr><tr><th>📚 Tempo de estudo</th><td>3 a 4 semanas</td></tr><tr><th>💪 Você já tem</th><td>Automação com Ansible (ajuda a entender IaC)</td></tr></table>
+  
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Barata e cobre a lacuna de IaC no currículo</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>State, backends e locking</li><li>Módulos e workflow (init, plan, apply)</li><li>Diferenças entre Terraform CE e HCP Terraform</li></ul></div>
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Confira a versão atual da prova antes de estudar</li></ul></div>
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>Tutoriais oficiais em developer.hashicorp.com (gratuitos)</li></ul></div>
+  </details>
+  <a class="botao" href="https://www.hashicorp.com/certification/terraform-associate" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>MongoDB Associate Database Administrator</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 6</span><span class='chip'>🏢 MongoDB</span><span class='chip'>📝 Múltipla escolha</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 150</b><span class='brl'>≈ R$ 785 com IOF</span></div><span class='selo'>ℹ valor de referência</span></div>
+  <table><tr><th>🧪 Formato</th><td>Múltipla escolha, online com fiscal remoto</td></tr><tr><th>⏱️ Duração</th><td>~1h15</td></tr><tr><th>✅ Aprovação</th><td>não divulgada</td></tr><tr><th>📅 Validade</th><td>confira na página oficial</td></tr><tr><th>🌐 Idioma</th><td>Inglês</td></tr><tr><th>📚 Tempo de estudo</th><td>4 a 6 semanas</td></tr><tr><th>💪 Você já tem</th><td>Já criou e configurou cluster MongoDB</td></tr></table>
+  
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Os cursos da MongoDB University são gratuitos</li><li>A MongoDB às vezes dá desconto ou voucher para quem conclui a trilha</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>Replica set e sharding a fundo</li><li>Backup, índices, segurança</li></ul></div>
+    
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>MongoDB University (gratuito)</li></ul></div>
+  </details>
+  <a class="botao" href="https://learn.mongodb.com/pages/certification-program" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-certificacao">
+  <header>
+    <span class="avatar">🎓</span>
+    <div class="titulo"><h3>PCA — Prometheus Certified Associate</h3><div class="chips"><span class='chip destaque'>⭐ Prioridade 7</span><span class='chip'>🏢 Linux Foundation / CNCF</span><span class='chip'>📝 Múltipla escolha</span></div></div>
+  </header>
+  <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 250</b><span class='brl'>≈ R$ 1.308 com IOF</span></div><span class='selo ok'>✔ lido do site hoje</span></div>
+  <table><tr><th>🧪 Formato</th><td>Múltipla escolha, online com fiscal remoto</td></tr><tr><th>⏱️ Duração</th><td>1h30</td></tr><tr><th>✅ Aprovação</th><td>75%</td></tr><tr><th>📅 Validade</th><td>2 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês</td></tr><tr><th>📚 Tempo de estudo</th><td>3 a 4 semanas</td></tr><tr><th>💪 Você já tem</th><td>Monitoramento com Nagios XI, NRPE e NagVis</td></tr></table>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>🏷️ <b>banner do site:</b> Cybersecurity Awareness Month: Save Up to 40%!</li><li class='trecho'>💬 “…CA) - Linux Foundation - Education Skip to main content 🛡️ Cybersecurity Awareness Month: Save Up to 40%! ➜ SECURE SAVINGS NOW Training &amp; Certification Catalog See Full Catalog Certifications Instructor-led Cours…”</li><li class='trecho'>💬 “…guage. 1 2 3 4 5 6 7 8 9 $250 Exam only Enroll Today Get a Quote Bundle &amp; Save Best Value Save 40% on PCA with the THRIVE-ONE Annual Subscription Bundle $495 Exam + Full Access Subscription Buy Value Bundle…”</li></ul></div>
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>1 reteste grátis</li></ul></div>
+    <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>PromQL, exporters, Alertmanager, modelo pull</li></ul></div>
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Opcional. Faz sentido se o trabalho migrar de Nagios para Prometheus</li></ul></div>
+    <div class='bloco'><h4>🧰 Material</h4><ul><li>Documentação oficial do Prometheus</li></ul></div>
+  </details>
+  <a class="botao" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article></div><div class='secao' id='ingles'><span class='ic'>🗣️</span><div><h2>Inglês</h2><p class='muted'>Aulas e planos de conversação. Todas as provas acima são em inglês.</p></div></div><div class='grid'>
+<article class="card cat-ingles">
+  <header>
+    <span class="avatar">🗣️</span>
+    <div class="titulo"><h3>Cambly</h3><div class="chips"><span class='chip'>🏢 Cambly</span></div></div>
+  </header>
+  
+  <table><tr><th>🧪 Formato</th><td>Conversação com nativos por vídeo, planos mensais</td></tr><tr><th>📚 Tempo de estudo</th><td>contínuo</td></tr></table>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>💲 <b>Grupos | Private+ | Pro (de → por):</b> R$98 /mês R$55 | R$273 /mês R$154 | R$398 /mês R$224</li></ul></div>
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Small groups (grupos pequenos), Private+ (aulas individuais) e Pro</li><li>Costuma ter desconto forte na Black Friday</li></ul></div>
+    
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Não tem estrutura de curso. Bom para conversação</li></ul></div>
+    
+  </details>
+  <a class="botao" href="https://www.cambly.com/english?lang=pt_BR" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-ingles">
+  <header>
+    <span class="avatar">🗣️</span>
+    <div class="titulo"><h3>italki (professor particular)</h3><div class="chips"><span class='chip'>🏢 italki</span></div></div>
+  </header>
+  
+  <table><tr><th>🧪 Formato</th><td>Aulas avulsas com professor, você escolhe preço e horário</td></tr><tr><th>📚 Tempo de estudo</th><td>1 a 2 aulas por semana</td></tr></table>
+  
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Professores comunitários costumam cobrar entre ~R$ 40 e 90 por aula</li><li>Procure professor com foco em tech interview e conversation</li></ul></div>
+    
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Melhor custo-benefício para quem tem orçamento de ~R$ 150/mês</li></ul></div>
+    
+  </details>
+  <a class="botao" href="https://www.italki.com/en" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article></div><div class='secao' id='pos'><span class='ic'>🏛️</span><div><h2>Pós-graduação</h2><p class='muted'>MBAs e especializações EAD. Exigem diploma de graduação.</p></div></div><div class='grid'>
+<article class="card cat-pos">
+  <header>
+    <span class="avatar">🏛️</span>
+    <div class="titulo"><h3>MBA Cloud Computing &amp; DevOps — Impacta</h3><div class="chips"><span class='chip'>🏢 Faculdade Impacta</span><span class='chip'>🎥 Online ao vivo</span></div></div>
+  </header>
+  
+  <table><tr><th>🧪 Formato</th><td>Online ao vivo, 360 horas, sem TCC</td></tr><tr><th>⏱️ Duração</th><td>~9 meses (até 2 anos para concluir os módulos)</td></tr></table>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>💳 <b>parcela a partir de (R$):</b> 285,43</li><li>💳 <b>nº de parcelas:</b> 36</li><li>🏷️ <b>desconto anunciado:</b> 30% OFF</li><li class='trecho'>💬 “…Todos os direitos reservados. Powered by J&amp;A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…”</li></ul></div>
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Exige diploma de graduação</li><li>Pagamento parcelado sem juros</li></ul></div>
+    
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Confira o registro no e-MEC e a grade (prática ou só gestão)</li><li>Peça desconto à vista e compare com Quero Bolsa</li></ul></div>
+    
+  </details>
+  <a class="botao" href="https://mba.impacta.edu.br/mbas/cloud-computing-devops/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-pos">
+  <header>
+    <span class="avatar">🏛️</span>
+    <div class="titulo"><h3>MBA Digital Infrastructure &amp; Cloud Operations — Impacta</h3><div class="chips"><span class='chip'>🏢 Faculdade Impacta</span><span class='chip'>🎥 Online ao vivo</span></div></div>
+  </header>
+  
+  <table><tr><th>🧪 Formato</th><td>Online ao vivo</td></tr></table>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>💳 <b>parcela a partir de (R$):</b> 285,43</li><li>💳 <b>nº de parcelas:</b> 36</li><li>🏷️ <b>desconto anunciado:</b> 30% OFF</li><li class='trecho'>💬 “…Todos os direitos reservados. Powered by J&amp;A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…”</li></ul></div>
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Mais focado em infraestrutura e operação. Compare a grade com o de Cloud &amp; DevOps</li></ul></div>
+    
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Exige diploma de graduação</li></ul></div>
+    
+  </details>
+  <a class="botao" href="https://mba.impacta.edu.br/mbas/digital-infrastructure-cloud-operations/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article>
+<article class="card cat-pos">
+  <header>
+    <span class="avatar">🏛️</span>
+    <div class="titulo"><h3>Pós-graduação EAD — Uninter</h3><div class="chips"><span class='chip'>🏢 Uninter</span><span class='chip'>💻 EAD</span></div></div>
+  </header>
+  
+  <table><tr><th>🧪 Formato</th><td>100% EAD, em geral 360 horas em ~6 meses</td></tr></table>
+  
+  <details><summary>📖 Como funciona, o que estudar e material</summary>
+    <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Costuma ser uma das opções mais baratas</li></ul></div>
+    
+    <div class='bloco'><h4>⚠️ Pontos de atenção</h4><ul><li>Verifique se há curso de DevOps/Cloud com disciplinas práticas</li></ul></div>
+    
+  </details>
+  <a class="botao" href="https://www.uninter.com/pos-graduacao/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article></div>
+<div class="box" style="margin-top:32px"><b>🔎 Como ler os ícones</b>
+<div class="legenda"><span>💲 preço</span><span>✔ lido do site hoje</span><span>ℹ valor de referência (o site não mostra preço)</span>
+<span>🏷️ desconto</span><span>💳 parcelamento</span><span>👀 capturado do site hoje</span><span>💬 trecho de promoção</span>
+<span>🖥️ prova prática</span><span>📝 múltipla escolha</span><span>⭐ ordem sugerida</span><span>⚠️ ponto de atenção</span></div>
+<p class="muted">Preços em reais = dólar comercial × (1 + IOF de 3.5%). A fatura usa a cotação do dia do pagamento.
+Formato e tempo de estudo vêm do catalogo.yaml. Confira sempre a página oficial antes de comprar.</p></div>
+</main></body></html>

@@ -1,0 +1,336 @@
+# Catálogo do Radar de Certificações
+# ------------------------------------------------------------------
+# Cada item tem:
+#   - informações fixas (como funciona a prova, tempo de estudo, etc.),
+#     escritas à mão e revisadas de vez em quando;
+#   - "fontes": páginas que o robô visita todo dia. Para cada fonte,
+#     "campos" são expressões regulares que extraem valores (preço,
+#     desconto...). O primeiro grupo () de cada regex vira o valor.
+#     Se a página mudar e o regex parar de bater, o relatório avisa.
+#
+# Para adicionar um curso/certificação: copie um bloco e ajuste.
+# ------------------------------------------------------------------
+
+perfil:
+  nome: David
+  resumo: >
+    Sysadmin Linux (CentOS/Ubuntu) com atuação DevOps/SRE: Ansible, Rundeck,
+    N8N, Docker, Kubernetes, Nagios XI, MongoDB, PostgreSQL, Python e Bash.
+  horas_semana: 8   # ~1h/dia útil + 3h no fim de semana
+
+datas_importantes:
+  - {data: 2026-10-23, nome: "Fim do cupom de outubro da Linux Foundation (35%)"}
+  - {data: 2026-11-27, nome: "Black Friday"}
+  - {data: 2026-11-30, nome: "Cyber Monday (maior promoção do ano da Linux Foundation)"}
+  - {data: 2026-12-09, nome: "Fim provável da Cyber Week LF (em 2025 foi até 09/12)"}
+
+# Página agregadora de cupons da Linux Foundation (atualizada quase todo dia)
+cupons_linux_foundation:
+  url: https://raw.githubusercontent.com/techiescamp/linux-foundation-coupon/main/README.md
+  pagina: https://github.com/techiescamp/linux-foundation-coupon
+
+itens:
+
+  # ====================== CERTIFICAÇÕES ======================
+
+  - id: cka
+    categoria: certificacao
+    nome: CKA — Certified Kubernetes Administrator
+    emissor: Linux Foundation / CNCF
+    prioridade: 1
+    link_oficial: https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
+    formato: Prova prática no terminal (tarefas reais em clusters), online com fiscal remoto
+    duracao: 2 horas
+    aprovacao: 66%
+    validade: 2 anos
+    idioma: Inglês (há opção em outros idiomas, confira no agendamento)
+    preco_referencia_usd: 445
+    estudo_estimado: 8 a 10 semanas
+    voce_ja_tem: Configura clusters e dá suporte a aplicações no Kubernetes
+    lacunas:
+      - Troubleshooting de cluster, que é o maior peso da prova
+      - Backup e restore do etcd
+      - RBAC, NetworkPolicy, Gateway API
+      - Helm e Kustomize
+      - Velocidade no kubectl (imperativo, --dry-run=client -o yaml, aliases)
+    como_funciona:
+      - O voucher inclui 1 reteste grátis e 2 sessões do simulador killer.sh
+      - O killer.sh é mais difícil que a prova real, então é um bom termômetro
+      - Depois da compra você tem 12 meses para agendar
+      - Pode consultar a documentação oficial do Kubernetes durante a prova
+    atencao:
+      - Preço em dólar. No cartão entram IOF e câmbio
+      - Exige webcam, documento com foto e ambiente silencioso e limpo
+    material:
+      - Curso do Mumshad Mannambeth (Udemy, compre em promoção)
+      - Killercoda (cenários gratuitos) e killer.sh
+    fontes:
+      - url: https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
+        campos:
+          preco_prova_usd: 'exam only\s*[–-]\s*\$(\d+)'
+          banner_promo: 'Skip to main content\W*(.{5,100}?)\s*➜'
+
+  - id: lfcs
+    categoria: certificacao
+    nome: LFCS — Linux Foundation Certified Sysadmin
+    emissor: Linux Foundation
+    prioridade: 2
+    link_oficial: https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/
+    formato: Prova prática no terminal (base Ubuntu), online com fiscal remoto
+    duracao: 2 horas
+    aprovacao: ~67%
+    validade: 2 anos
+    idioma: Inglês
+    preco_referencia_usd: 445
+    estudo_estimado: 4 a 6 semanas
+    voce_ja_tem: Linux no dia a dia, hardening, resolução de problemas
+    lacunas:
+      - Ubuntu e netplan
+      - LVM, RAID, quotas
+      - NFS e montagens
+      - Fazer tudo sem depender de busca na internet
+    como_funciona:
+      - Mesmas regras da CKA - 1 reteste grátis e simulador incluído
+      - Costuma entrar em bundle com a CKA na Cyber Week
+    atencao:
+      - Vale a pena só se o bundle LFCS + CKA sair perto de 50% por prova
+    material:
+      - Objetivos oficiais da prova
+      - KodeKloud e o seu homelab
+    fontes:
+      - url: https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/
+        campos:
+          preco_prova_usd: 'exam only\s*[–-]\s*\$(\d+)'
+          banner_promo: 'Skip to main content\W*(.{5,100}?)\s*➜'
+
+  - id: rhcsa
+    categoria: certificacao
+    nome: RHCSA — Red Hat Certified System Administrator (EX200)
+    emissor: Red Hat
+    prioridade: 3
+    link_oficial: https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam
+    formato: Prova prática em RHEL, remota ou em centro de testes
+    duracao: ~3 horas
+    aprovacao: 210 de 300 pontos
+    validade: 3 anos
+    idioma: Inglês (outros idiomas disponíveis em alguns locais)
+    preco_referencia_usd: 500
+    estudo_estimado: 5 a 7 semanas
+    voce_ja_tem: CentOS, que é da família Red Hat
+    lacunas:
+      - SELinux (contextos, booleans, portas)
+      - Stratis, LVM, swap e montagens persistentes
+      - podman e containers como serviço systemd
+      - nmcli, firewalld, autofs
+      - Recuperação de senha de root
+    como_funciona:
+      - Pré-requisito para a RHCE, que é a certificação de Ansible
+      - Sem consulta à internet durante a prova
+    atencao:
+      - A Red Hat dá menos desconto que a Linux Foundation
+      - No Brasil, parceiros oficiais vendem em reais e às vezes parcelado. Vale cotar
+      - O reteste normalmente NÃO vem incluído
+    material:
+      - Assinatura gratuita Red Hat Developer (RHEL liberado para lab)
+      - Livros e vídeos de Sander van Vugt
+    fontes:
+      - url: https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam
+
+  - id: rhce
+    categoria: certificacao
+    nome: RHCE — Red Hat Certified Engineer (EX294, Ansible)
+    emissor: Red Hat
+    prioridade: 4
+    link_oficial: https://www.redhat.com/en/services/training/ex294-red-hat-certified-engineer-rhce-exam-red-hat-enterprise-linux-9
+    formato: Prova prática de automação com Ansible em RHEL
+    duracao: ~4 horas
+    aprovacao: 210 de 300 pontos
+    validade: 3 anos
+    idioma: Inglês
+    preco_referencia_usd: 500
+    estudo_estimado: 6 a 8 semanas depois da RHCSA
+    voce_ja_tem: Ansible em produção (atualização massiva de pacotes, integração com Nagios/NRPE)
+    lacunas:
+      - Roles e collections, ansible-navigator
+      - Ansible Vault
+      - Templates Jinja2 e filtros
+      - RHEL System Roles
+      - Tudo sem acesso à internet
+    como_funciona:
+      - É a certificação de referência em Ansible. A Linux Foundation não tem prova de Ansible
+      - O título RHCE só é concedido com a RHCSA ativa
+    atencao:
+      - Na prática são duas provas caras (RHCSA + RHCE)
+    material:
+      - Objetivos oficiais da EX294
+      - Sander van Vugt (RHCE Ansible)
+    fontes:
+      - url: https://www.redhat.com/en/services/training/ex294-red-hat-certified-engineer-rhce-exam-red-hat-enterprise-linux-9
+
+  - id: terraform
+    categoria: certificacao
+    nome: HashiCorp Terraform Associate
+    emissor: HashiCorp (IBM)
+    prioridade: 5
+    link_oficial: https://www.hashicorp.com/certification/terraform-associate
+    formato: Múltipla escolha, online com fiscal remoto
+    duracao: 1 hora
+    aprovacao: não divulgada
+    validade: 2 anos
+    idioma: Inglês
+    preco_referencia_usd: 70.50
+    estudo_estimado: 3 a 4 semanas
+    voce_ja_tem: Automação com Ansible (ajuda a entender IaC)
+    lacunas:
+      - State, backends e locking
+      - Módulos e workflow (init, plan, apply)
+      - Diferenças entre Terraform CE e HCP Terraform
+    como_funciona:
+      - Barata e cobre a lacuna de IaC no currículo
+    atencao:
+      - Confira a versão atual da prova antes de estudar
+    material:
+      - Tutoriais oficiais em developer.hashicorp.com (gratuitos)
+    fontes:
+      - url: https://www.hashicorp.com/certification/terraform-associate
+
+  - id: mongodb_dba
+    categoria: certificacao
+    nome: MongoDB Associate Database Administrator
+    emissor: MongoDB
+    prioridade: 6
+    link_oficial: https://learn.mongodb.com/pages/certification-program
+    formato: Múltipla escolha, online com fiscal remoto
+    duracao: ~1h15
+    aprovacao: não divulgada
+    validade: confira na página oficial
+    idioma: Inglês
+    preco_referencia_usd: 150
+    estudo_estimado: 4 a 6 semanas
+    voce_ja_tem: Já criou e configurou cluster MongoDB
+    lacunas:
+      - Replica set e sharding a fundo
+      - Backup, índices, segurança
+    como_funciona:
+      - Os cursos da MongoDB University são gratuitos
+      - A MongoDB às vezes dá desconto ou voucher para quem conclui a trilha
+    atencao: []
+    material:
+      - MongoDB University (gratuito)
+    fontes:
+      - url: https://learn.mongodb.com/pages/certification-program
+
+  - id: pca
+    categoria: certificacao
+    nome: PCA — Prometheus Certified Associate
+    emissor: Linux Foundation / CNCF
+    prioridade: 7
+    link_oficial: https://training.linuxfoundation.org/certification/prometheus-certified-associate/
+    formato: Múltipla escolha, online com fiscal remoto
+    duracao: 1h30
+    aprovacao: 75%
+    validade: 2 anos
+    idioma: Inglês
+    preco_referencia_usd: 250
+    estudo_estimado: 3 a 4 semanas
+    voce_ja_tem: Monitoramento com Nagios XI, NRPE e NagVis
+    lacunas:
+      - PromQL, exporters, Alertmanager, modelo pull
+    como_funciona:
+      - 1 reteste grátis
+    atencao:
+      - Opcional. Faz sentido se o trabalho migrar de Nagios para Prometheus
+    material:
+      - Documentação oficial do Prometheus
+    fontes:
+      - url: https://training.linuxfoundation.org/certification/prometheus-certified-associate/
+        campos:
+          preco_prova_usd: 'exam only\s*[–-]\s*\$(\d+)'
+          banner_promo: 'Skip to main content\W*(.{5,100}?)\s*➜'
+
+  # ======================== INGLÊS ========================
+
+  - id: cambly
+    categoria: ingles
+    nome: Cambly
+    emissor: Cambly
+    link_oficial: https://www.cambly.com/english?lang=pt_BR
+    formato: Conversação com nativos por vídeo, planos mensais
+    estudo_estimado: contínuo
+    como_funciona:
+      - Small groups (grupos pequenos), Private+ (aulas individuais) e Pro
+      - Costuma ter desconto forte na Black Friday
+    atencao:
+      - Não tem estrutura de curso. Bom para conversação
+    fontes:
+      - url: https://www.cambly.com/english?lang=pt_BR
+        campos:
+          planos_de_por:
+            regex: 'A partir de (R\$\s?\d+\s*/m[eê]s\s*R\$\s?\d+)'
+            todos: true
+
+  - id: italki
+    categoria: ingles
+    nome: italki (professor particular)
+    emissor: italki
+    link_oficial: https://www.italki.com/en
+    formato: Aulas avulsas com professor, você escolhe preço e horário
+    estudo_estimado: 1 a 2 aulas por semana
+    como_funciona:
+      - Professores comunitários costumam cobrar entre ~R$ 40 e 90 por aula
+      - Procure professor com foco em tech interview e conversation
+    atencao:
+      - Melhor custo-benefício para quem tem orçamento de ~R$ 150/mês
+    # O italki bloqueia robôs (erro 429), então não há fonte automática.
+
+  # ===================== PÓS-GRADUAÇÃO =====================
+
+  - id: impacta_cloud_devops
+    categoria: pos
+    nome: MBA Cloud Computing & DevOps — Impacta
+    emissor: Faculdade Impacta
+    link_oficial: https://mba.impacta.edu.br/mbas/cloud-computing-devops/
+    formato: Online ao vivo, 360 horas, sem TCC
+    duracao: ~9 meses (até 2 anos para concluir os módulos)
+    como_funciona:
+      - Exige diploma de graduação
+      - Pagamento parcelado sem juros
+    atencao:
+      - Confira o registro no e-MEC e a grade (prática ou só gestão)
+      - Peça desconto à vista e compare com Quero Bolsa
+    fontes:
+      - url: https://mba.impacta.edu.br/mbas/cloud-computing-devops/
+        campos:
+          parcela_brl: 'a partir de R\$\s*([\d.,]+)'
+          parcelas: 'em até (\d+) parcelas'
+          desconto: 'Garanta (\d+%\s*OFF)'
+
+  - id: impacta_infra_cloud
+    categoria: pos
+    nome: MBA Digital Infrastructure & Cloud Operations — Impacta
+    emissor: Faculdade Impacta
+    link_oficial: https://mba.impacta.edu.br/mbas/digital-infrastructure-cloud-operations/
+    formato: Online ao vivo
+    como_funciona:
+      - Mais focado em infraestrutura e operação. Compare a grade com o de Cloud & DevOps
+    atencao:
+      - Exige diploma de graduação
+    fontes:
+      - url: https://mba.impacta.edu.br/mbas/digital-infrastructure-cloud-operations/
+        campos:
+          parcela_brl: 'a partir de R\$\s*([\d.,]+)'
+          parcelas: 'em até (\d+) parcelas'
+          desconto: 'Garanta (\d+%\s*OFF)'
+
+  - id: uninter
+    categoria: pos
+    nome: Pós-graduação EAD — Uninter
+    emissor: Uninter
+    link_oficial: https://www.uninter.com/pos-graduacao/
+    formato: 100% EAD, em geral 360 horas em ~6 meses
+    como_funciona:
+      - Costuma ser uma das opções mais baratas
+    atencao:
+      - Verifique se há curso de DevOps/Cloud com disciplinas práticas
+    fontes:
+      - url: https://www.uninter.com/pos-graduacao/
