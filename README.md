@@ -6,12 +6,25 @@ Robô que roda **todo dia às 08:00 (horário de Brasília), de graça, no GitHu
 - lê os cupons ativos da Linux Foundation em um agregador atualizado quase todo dia;
 - lê preço e desconto dos MBAs da Impacta e dos planos do Cambly;
 - converte dólar para real com IOF;
+- acompanha os principais eventos de tecnologia em São Paulo (aba **📍 Eventos SP**) e avisa quando um site anuncia ou muda a data;
 - compara com o dia anterior e aponta **o que mudou** (preço novo, cupom novo, texto de promoção novo);
 - publica um relatório completo em uma página (GitHub Pages) e manda um resumo no **Telegram** e/ou **e-mail**.
 
 O relatório também traz, para cada certificação: formato da prova, duração, nota de aprovação, validade,
 tempo de estudo estimado para o seu perfil, lacunas prováveis, pontos de atenção e material de estudo.
 Esses textos ficam em [catalogo.yaml](catalogo.yaml) e você pode editar à vontade.
+
+## Abas da página
+
+| Aba | O que mostra |
+|---|---|
+| 📊 Resumo | Dólar, contagem para Black Friday, novidades do dia, cupons com link para a página oficial de cada certificação, próximos eventos |
+| 🎓 Certificações | Preço, formato da prova, tempo de estudo, lacunas e material de cada certificação |
+| 🗣️ Inglês | Planos e preços de cursos de inglês |
+| 🏛️ Pós-graduação | MBAs EAD, parcelas e descontos |
+| 📍 Eventos SP | Eventos de tecnologia em São Paulo: próximos, aguardando data e já realizados |
+
+Para adicionar um evento, copie um bloco da seção `eventos:` do [catalogo.yaml](catalogo.yaml).
 
 ## Custo
 

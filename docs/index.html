@@ -35,19 +35,42 @@ code{background:var(--warnbg);color:var(--warn);padding:2px 8px;border-radius:6p
 .promo{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.promo:first-child{border-top:0}.promo .ic{font-size:1.4rem}
 .legenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85em;color:var(--muted);margin-top:8px}
 @media (max-width:420px){.grid{grid-template-columns:1fr}th{white-space:normal}}
-</style></head><body><main>
+
+.abas{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin:12px 0 4px;border-bottom:1px solid var(--line)}
+.abas a{flex:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;text-decoration:none;color:var(--txt);font-size:.92em}
+.abas a[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.cat-evento{--c:#1a7f37;--cbg:var(--okbg)}.card.apagado{opacity:.75}
+.cal{width:52px;flex:none;border-radius:10px;background:var(--cbg);color:var(--c);text-align:center;line-height:1.1;padding:6px 0}
+.cal span{display:block;text-transform:uppercase;font-size:.72em;font-weight:700}.cal b{display:block;font-size:1.35rem}.cal small{font-size:.7em}
+.cal.sem{background:var(--chip);color:var(--muted)}.chip.aviso{background:var(--warnbg);color:var(--warn)}
+.linkbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}.linkbar .muted{font-size:.82em}
+a.chip{text-decoration:none;color:var(--acc);border:1px solid var(--line)}a.link-cert{font-weight:600}
+.mini li{margin:6px 0}
+</style><script>
+document.documentElement.classList.add('js');
+function abrir(id){
+  var alvo=document.getElementById('aba-'+id)?id:'resumo';
+  document.querySelectorAll('.painel').forEach(function(p){p.hidden=p.id!=='aba-'+alvo});
+  document.querySelectorAll('.abas a').forEach(function(a){a.setAttribute('aria-selected',a.dataset.aba===alvo)});
+}
+window.addEventListener('hashchange',function(){abrir(location.hash.slice(1));window.scrollTo(0,0)});
+document.addEventListener('DOMContentLoaded',function(){abrir(location.hash.slice(1))});
+</script></head><body><main>
 <h1>📡 Radar de Certificações</h1>
-<div class="muted">🕗 Atualizado em 16/10/2026 20:15 (horário de Brasília) · 👤 Sysadmin Linux (CentOS/Ubuntu) com atuação DevOps/SRE: Ansible, Rundeck, N8N, Docker, Kubernetes, Nagios XI, MongoDB, PostgreSQL, Python e Bash.
+<div class="muted">🕗 Atualizado em 16/10/2026 20:29 (horário de Brasília) · 👤 Sysadmin Linux (CentOS/Ubuntu) com atuação DevOps/SRE: Ansible, Rundeck, N8N, Docker, Kubernetes, Nagios XI, MongoDB, PostgreSQL, Python e Bash.
 </div>
-<nav><a href='#novidades'>🆕 Novidades</a><a href='#cupons'>🎟️ Cupons</a><a href='#certificacao'>🎓 Certificações</a><a href='#ingles'>🗣️ Inglês</a><a href='#pos'>🏛️ Pós-graduação</a></nav>
+<nav class="abas" role="tablist"><a href='#resumo' data-aba='resumo' role='tab'>📊 Resumo</a><a href='#certificacao' data-aba='certificacao' role='tab'>🎓 Certificações</a><a href='#ingles' data-aba='ingles' role='tab'>🗣️ Inglês</a><a href='#pos' data-aba='pos' role='tab'>🏛️ Pós-graduação</a><a href='#eventos' data-aba='eventos' role='tab'>📍 Eventos SP</a></nav>
+<section class='painel' id='aba-resumo' role='tabpanel'>
 <div class="kpis"><div class='kpi'><span class='ic'>💵</span><div><span class='muted'>Dólar hoje com IOF</span><b>R$ 5,23</b><span class='muted'>comercial R$ 5,05</span></div></div><div class='kpi'><span class='ic'>🎟️</span><div><span class='muted'>Fim do cupom de outubro da Linux Foundation (35%)</span><b>em 7 dias</b><span class='muted'>23/10/2026</span></div></div><div class='kpi'><span class='ic'>🛍️</span><div><span class='muted'>Black Friday</span><b>em 42 dias</b><span class='muted'>27/11/2026</span></div></div><div class='kpi'><span class='ic'>💻</span><div><span class='muted'>Cyber Monday (maior promoção do ano da Linux Foundation)</span><b>em 45 dias</b><span class='muted'>30/11/2026</span></div></div><div class='kpi'><span class='ic'>💻</span><div><span class='muted'>Fim provável da Cyber Week LF (em 2025 foi até 09/12)</span><b>em 54 dias</b><span class='muted'>09/12/2026</span></div></div></div>
-<div class='secao' id='novidades'><span class='ic'>🆕</span><div><h2>Novidades de hoje</h2><p class='muted'>O que mudou desde a verificação anterior: preço, cupom ou texto de promoção.</p></div></div>
+<div class='secao' id='sec-novidades'><span class='ic'>🆕</span><div><h2>Novidades de hoje</h2><p class='muted'>O que mudou desde a verificação anterior: preço, cupom, data de evento ou texto de promoção.</p></div></div>
 <div class="box"><p class='vazio'>✅ Nenhuma mudança desde a última verificação.</p></div>
-<div class='secao' id='cupons'><span class='ic'>🎟️</span><div><h2>Cupons Linux Foundation ativos</h2><p class='muted'>Códigos de desconto para CKA, LFCS, PCA e bundles. Use no checkout do site da Linux Foundation.</p></div></div>
-<div class="box"><div class='promo'><span class='ic'>📣</span><div><b>Banner no site oficial da Linux Foundation</b><br>Cybersecurity Awareness Month: Save Up to 40%!</div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[UpTo 47% OFF] Linux Foundation Cyber Security Sale is Live (Limited Time offer)</b><br>Cupom: <code>OCT26NONCYBERCT</code> <code>OCT26CYBERCT</code> <code>OCT26THRIVECT</code><br><span class='muted'>Get a flat 35% discount on individual certifications like CKA, CKD, CKS, etc. ⏰ Note: Offer ends on October 23rd. So hurry up and lock in the huge discount.</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[Up To 38% OFF] Linux Foundation DevOps Sale (Limited Sale)</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>As part of the exclusive DevOps sale, get a flat 30% discount on all the Linux Foundation certifications, training programs, skill crews, and IT professional programs, including all bundles like the Kubestronaut. ⏰ Note: Offer ends soon. So lock in the price.</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[20% OFF] KubeCon + CloudNativeCon North America 2026</b><br>Cupom: <code>COMTECHIES20</code><br><span class='muted'>KubeCon + CloudNativeCon North America is coming to Atlanta, November 10-1. ⏰ Act Fast - code expires soon!</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[40% OFF] Kubestronaut Bundle Discounts</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>If you are looking for the Kubestronaut program, use code DCUBE30 with the following bundle options. </span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[40% OFF] Golden Kubestronaut Bundle Coupon</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>If you are a Kubestronaut, you can go for the Golden Kubestronaut Bundle </span></div></div>
+<div class='secao' id='sec-cupons'><span class='ic'>🎟️</span><div><h2>Cupons Linux Foundation ativos</h2><p class='muted'>Códigos de desconto para CKA, LFCS, PCA e bundles. Clique na certificação para ver a página oficial.</p></div></div>
+<div class="box"><div class='promo'><span class='ic'>📣</span><div><b>Banner no site oficial da Linux Foundation</b><br>Cybersecurity Awareness Month: Save Up to 40%!</div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[UpTo 47% OFF] Linux Foundation Cyber Security Sale is Live (Limited Time offer)</b><br>Cupom: <code>OCT26NONCYBERCT</code> <code>OCT26CYBERCT</code> <code>OCT26THRIVECT</code><br><span class='muted'>Get a flat 35% discount on individual certifications like CKA, CKD, CKS, etc. ⏰ Note: Offer ends on October 23rd. So hurry up and lock in the huge discount.</span><div class='linkbar'><span class='muted'>Página oficial:</span><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/' target='_blank' rel='noopener'>🎓 CKA</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/' target='_blank' rel='noopener'>🎓 CKAD</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/' target='_blank' rel='noopener'>🎓 CKS</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/' target='_blank' rel='noopener'>🎓 KCNA</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/kubernetes-and-cloud-native-security-associate-kcsa/' target='_blank' rel='noopener'>🎓 KCSA</a></div><div class='linkbar'><span class='muted'>Ofertas e bundles:</span><a class='chip' href='https://kube.promo/cks' target='_blank' rel='noopener'>📦 CKS</a><a class='chip' href='https://kube.promo/kcsa' target='_blank' rel='noopener'>📦 KCSA</a><a class='chip' href='https://kube.promo/kcsa-cks' target='_blank' rel='noopener'>📦 KCSA + CKS Exam Bundle</a><a class='chip' href='https://kube.promo/cka-ckad' target='_blank' rel='noopener'>📦 CKA + CKAD</a><a class='chip' href='https://kube.promo/bundle' target='_blank' rel='noopener'>📦 CKA + CKS Bundle</a><a class='chip' href='https://kube.promo/k8s-bundle' target='_blank' rel='noopener'>📦 CKA + CKAD + CKS Exam bundle</a><a class='chip' href='https://kube.promo/kubestronaut' target='_blank' rel='noopener'>📦 KCNA + KCSA + CKA + CKAD + CKS</a><a class='chip' href='https://kube.promo/kcna-cka' target='_blank' rel='noopener'>📦 KCNA + CKA</a></div></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[Up To 38% OFF] Linux Foundation DevOps Sale (Limited Sale)</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>As part of the exclusive DevOps sale, get a flat 30% discount on all the Linux Foundation certifications, training programs, skill crews, and IT professional programs, including all bundles like the Kubestronaut. ⏰ Note: Offer ends soon. So lock in the price.</span><div class='linkbar'><span class='muted'>Página oficial:</span><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/' target='_blank' rel='noopener'>🎓 CKA</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/' target='_blank' rel='noopener'>🎓 CKAD</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/' target='_blank' rel='noopener'>🎓 CKS</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/' target='_blank' rel='noopener'>🎓 KCNA</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/kubernetes-and-cloud-native-security-associate-kcsa/' target='_blank' rel='noopener'>🎓 KCSA</a><a class='chip link-cert' href='https://www.cncf.io/training/kubestronaut/' target='_blank' rel='noopener'>🎓 Kubestronaut</a></div><div class='linkbar'><span class='muted'>Ofertas e bundles:</span><a class='chip' href='https://kube.promo/cka-ckad' target='_blank' rel='noopener'>📦 CKA + CKAD</a><a class='chip' href='https://kube.promo/bundle' target='_blank' rel='noopener'>📦 CKA + CKS Bundle</a><a class='chip' href='https://kube.promo/k8s-bundle' target='_blank' rel='noopener'>📦 CKA + CKAD + CKS Exam bundle</a><a class='chip' href='https://kube.promo/kubestronaut' target='_blank' rel='noopener'>📦 KCNA + KCSA + CKA + CKAD + CKS</a><a class='chip' href='https://kube.promo/kcna-cka' target='_blank' rel='noopener'>📦 KCNA + CKA</a><a class='chip' href='https://kube.promo/kcsa-cks' target='_blank' rel='noopener'>📦 KCSA + CKS Exam Bundle</a><a class='chip' href='https://kube.promo/kcna-kcsa' target='_blank' rel='noopener'>📦 KCNA + KCSA Exam Bundle</a></div></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[20% OFF] KubeCon + CloudNativeCon North America 2026</b><br>Cupom: <code>COMTECHIES20</code><br><span class='muted'>KubeCon + CloudNativeCon North America is coming to Atlanta, November 10-1. ⏰ Act Fast - code expires soon!</span></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[40% OFF] Kubestronaut Bundle Discounts</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>If you are looking for the Kubestronaut program, use code DCUBE30 with the following bundle options. </span><div class='linkbar'><span class='muted'>Página oficial:</span><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/' target='_blank' rel='noopener'>🎓 CKA</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/' target='_blank' rel='noopener'>🎓 CKAD</a><a class='chip link-cert' href='https://www.cncf.io/training/kubestronaut/' target='_blank' rel='noopener'>🎓 Kubestronaut</a></div><div class='linkbar'><span class='muted'>Ofertas e bundles:</span><a class='chip' href='https://kube.promo/kubestronaut' target='_blank' rel='noopener'>📦 kubestronaut Bundle</a><a class='chip' href='https://trainingportal.linuxfoundation.org/collections/cka-upgrade-to-kubestronaut-bundle' target='_blank' rel='noopener'>📦 If you have CKA, go for the</a><a class='chip' href='https://trainingportal.linuxfoundation.org/collections/certified-kubernetes-application-developer-ckad-to-kubestronaut-upgrade-bundle' target='_blank' rel='noopener'>📦 If you have CKAD, go for the</a></div></div></div><div class='promo'><span class='ic'>🎟️</span><div><b>[40% OFF] Golden Kubestronaut Bundle Coupon</b><br>Cupom: <code>DCUBE30</code><br><span class='muted'>If you are a Kubestronaut, you can go for the Golden Kubestronaut Bundle </span><div class='linkbar'><span class='muted'>Página oficial:</span><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/' target='_blank' rel='noopener'>🎓 LFCS</a><a class='chip link-cert' href='https://training.linuxfoundation.org/certification/prometheus-certified-associate/' target='_blank' rel='noopener'>🎓 PCA</a><a class='chip link-cert' href='https://www.cncf.io/training/kubestronaut/' target='_blank' rel='noopener'>🎓 Kubestronaut</a></div></div></div>
 <p class="muted">Fonte: <a href="https://github.com/techiescamp/linux-foundation-coupon">Linux Foundation Coupons (Updated For October 2026)</a>.
-Confirme o desconto no checkout antes de pagar.</p></div>
-<div class='secao' id='certificacao'><span class='ic'>🎓</span><div><h2>Certificações</h2><p class='muted'>Provas que comprovam conhecimento técnico. Preço em dólar, voucher vale 12 meses.</p></div></div><div class='grid'>
+Os links 📦 são do agregador e levam ao checkout da Linux Foundation. Confirme o desconto antes de pagar.</p></div>
+<div class='secao' id='sec-proximos'><span class='ic'>📍</span><div><h2>Próximos eventos em SP</h2><p class='muted'>Os mais próximos. Veja todos na aba Eventos SP.</p></div></div>
+<div class="box"><ul class="mini sem-marca"><li>🔜 <b>PlatformCon Live Day São Paulo</b> — 07/11/2026 <span class='muted'>(São Paulo)</span></li><li>🔜 <b>Red Hat Summit Connect São Paulo</b> — 10/11/2026 <span class='muted'>(Transamerica Expo Center, São Paulo)</span></li><li>🔜 <b>DevFest 2026 — GDG Cloud São Paulo</b> — 28/11/2026 <span class='muted'>(FIAP Paulista, São Paulo)</span></li><li>🔜 <b>SREday Campinas</b> — 2 a 3/12/2026 <span class='muted'>(Campinas (interior de SP))</span></li></ul><p><a href="#eventos">Ver todos os eventos →</a></p></div>
+</section><section class='painel' id='aba-certificacao' role='tabpanel'><div class='secao' id='sec-certificacao'><span class='ic'>🎓</span><div><h2>Certificações</h2><p class='muted'>Provas que comprovam conhecimento técnico. Preço em dólar, voucher vale 12 meses.</p></div></div><div class='grid'>
 <article class="card cat-certificacao">
   <header>
     <span class="avatar">🎓</span>
@@ -119,7 +142,7 @@ Confirme o desconto no checkout antes de pagar.</p></div>
   </header>
   <div class='preco'><span class='preco-ic'>💲</span><div><b>US$ 70.5</b><span class='brl'>≈ R$ 369 com IOF</span></div><span class='selo'>ℹ valor de referência</span></div>
   <table><tr><th>🧪 Formato</th><td>Múltipla escolha, online com fiscal remoto</td></tr><tr><th>⏱️ Duração</th><td>1 hora</td></tr><tr><th>✅ Aprovação</th><td>não divulgada</td></tr><tr><th>📅 Validade</th><td>2 anos</td></tr><tr><th>🌐 Idioma</th><td>Inglês</td></tr><tr><th>📚 Tempo de estudo</th><td>3 a 4 semanas</td></tr><tr><th>💪 Você já tem</th><td>Automação com Ansible (ajuda a entender IaC)</td></tr></table>
-  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li class='erro'>⚠️ Não consegui ler <a href='https://www.hashicorp.com/certification/terraform-associate'>a página</a>: HTTPError: 429 Client Error: Too Many Requests for url: https://www.hashicorp.com/certification/terraform-associate</li></ul></div>
+  
   <details><summary>📖 Como funciona, o que estudar e material</summary>
     <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Barata e cobre a lacuna de IaC no currículo</li></ul></div>
     <div class='bloco'><h4>🎯 O que estudar (lacunas prováveis)</h4><ul><li>State, backends e locking</li><li>Módulos e workflow (init, plan, apply)</li><li>Diferenças entre Terraform CE e HCP Terraform</li></ul></div>
@@ -159,7 +182,7 @@ Confirme o desconto no checkout antes de pagar.</p></div>
     <div class='bloco'><h4>🧰 Material</h4><ul><li>Documentação oficial do Prometheus</li></ul></div>
   </details>
   <a class="botao" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/" target="_blank" rel="noopener">🔗 Site oficial</a>
-</article></div><div class='secao' id='ingles'><span class='ic'>🗣️</span><div><h2>Inglês</h2><p class='muted'>Aulas e planos de conversação. Todas as provas acima são em inglês.</p></div></div><div class='grid'>
+</article></div></section><section class='painel' id='aba-ingles' role='tabpanel'><div class='secao' id='sec-ingles'><span class='ic'>🗣️</span><div><h2>Inglês</h2><p class='muted'>Aulas e planos de conversação. Todas as provas acima são em inglês.</p></div></div><div class='grid'>
 <article class="card cat-ingles">
   <header>
     <span class="avatar">🗣️</span>
@@ -167,7 +190,7 @@ Confirme o desconto no checkout antes de pagar.</p></div>
   </header>
   
   <table><tr><th>🧪 Formato</th><td>Conversação com nativos por vídeo, planos mensais</td></tr><tr><th>📚 Tempo de estudo</th><td>contínuo</td></tr></table>
-  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>💲 <b>Grupos | Private+ | Pro (de → por):</b> <span class='erro'>não encontrado (a página pode ter mudado)</span></li></ul></div>
+  <div class='visto'><h4>👀 Visto no site hoje</h4><ul class='sem-marca'><li>💲 <b>Grupos | Private+ | Pro (de → por):</b> R$98 /mês R$55 | R$273 /mês R$154 | R$398 /mês R$224</li></ul></div>
   <details><summary>📖 Como funciona, o que estudar e material</summary>
     <div class='bloco'><h4>⚙️ Como funciona</h4><ul><li>Small groups (grupos pequenos), Private+ (aulas individuais) e Pro</li><li>Costuma ter desconto forte na Black Friday</li></ul></div>
     
@@ -191,7 +214,7 @@ Confirme o desconto no checkout antes de pagar.</p></div>
     
   </details>
   <a class="botao" href="https://www.italki.com/en" target="_blank" rel="noopener">🔗 Site oficial</a>
-</article></div><div class='secao' id='pos'><span class='ic'>🏛️</span><div><h2>Pós-graduação</h2><p class='muted'>MBAs e especializações EAD. Exigem diploma de graduação.</p></div></div><div class='grid'>
+</article></div></section><section class='painel' id='aba-pos' role='tabpanel'><div class='secao' id='sec-pos'><span class='ic'>🏛️</span><div><h2>Pós-graduação</h2><p class='muted'>MBAs e especializações EAD. Exigem diploma de graduação.</p></div></div><div class='grid'>
 <article class="card cat-pos">
   <header>
     <span class="avatar">🏛️</span>
@@ -239,11 +262,108 @@ Confirme o desconto no checkout antes de pagar.</p></div>
     
   </details>
   <a class="botao" href="https://www.uninter.com/pos-graduacao/" target="_blank" rel="noopener">🔗 Site oficial</a>
+</article></div></section><section class='painel' id='aba-eventos' role='tabpanel'>
+<div class='secao' id='sec-ev-proximos'><span class='ic'>🔜</span><div><h2>Próximos eventos</h2><p class='muted'>Eventos de tecnologia em São Paulo e região com data marcada.</p></div></div>
+<div class="grid">
+<article class="card cat-evento ">
+  <header><div class='cal'><span>nov</span><b>7</b><small>2026</small></div>
+    <div class="titulo"><h3>PlatformCon Live Day São Paulo</h3><div class="chips"><span class='chip destaque'>🔜 em 22 dias</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>07/11/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Engenharia de plataforma, DevOps</td></tr><tr><th>📍 Local</th><td>São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Confira no site</td></tr><tr><th>🎯 Para você</th><td>Alta. Platform engineering, Kubernetes e automação</td></tr></table>
+  <div class='visto'><h4>👀 Datas vistas no site hoje</h4><p>28 October 2026 | 7 November 2026 | 24 February 2027</p></div>
+  <a class="botao" href="https://platformcon.com/" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento ">
+  <header><div class='cal'><span>nov</span><b>10</b><small>2026</small></div>
+    <div class="titulo"><h3>Red Hat Summit Connect São Paulo</h3><div class="chips"><span class='chip destaque'>🔜 em 25 dias</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>10/11/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Linux, Ansible, OpenShift, IA</td></tr><tr><th>📍 Local</th><td>Transamerica Expo Center, São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Inscrição no site da Red Hat (confirme se é gratuito)</td></tr><tr><th>🎯 Para você</th><td>Alta. Conversa direta com a Red Hat sobre RHCSA/RHCE e Ansible Automation Platform</td></tr></table>
+  <div class='visto'><h4>👀 Datas vistas no site hoje</h4><p>November 10, 2026 | 10 de novembro de 2026</p></div>
+  <a class="botao" href="https://www.redhat.com/en/summit/connect/latam/sao-paulo-2026" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento ">
+  <header><div class='cal'><span>nov</span><b>28</b><small>2026</small></div>
+    <div class="titulo"><h3>DevFest 2026 — GDG Cloud São Paulo</h3><div class="chips"><span class='chip destaque'>🔜 em 43 dias</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>28/11/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Google Cloud, IA, comunidade</td></tr><tr><th>📍 Local</th><td>FIAP Paulista, São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Inscrição pelo Sympla</td></tr><tr><th>🎯 Para você</th><td>Média. Cloud e comunidade, bom para networking</td></tr></table>
+  
+  <a class="botao" href="https://www.sympla.com.br/evento/devfest-2026-code-connect-celebrate/3567214" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento ">
+  <header><div class='cal'><span>dez</span><b>2</b><small>2026</small></div>
+    <div class="titulo"><h3>SREday Campinas</h3><div class="chips"><span class='chip destaque'>🔜 em 47 dias</span><span class='chip aviso'>🔁 fonte agregadora, confirme</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>2 a 3/12/2026</b></td></tr><tr><th>🏷️ Tema</th><td>SRE, observabilidade, DevOps</td></tr><tr><th>📍 Local</th><td>Campinas (interior de SP)</td></tr><tr><th>💰 Ingresso</th><td>Confira no site</td></tr><tr><th>🎯 Para você</th><td>Alta. Tema SRE, igual ao seu cargo</td></tr></table>
+  
+  <a class="botao" href="https://sreday.com/" target="_blank" rel="noopener">🔗 Site do evento</a>
 </article></div>
+<div class='secao' id='sec-ev-sem-data'><span class='ic'>❔</span><div><h2>Aguardando data</h2><p class='muted'>Eventos que acontecem todo ano mas ainda não anunciaram a próxima edição.</p></div></div>
+<div class="grid">
+<article class="card cat-evento ">
+  <header><div class='cal sem'><b>?</b><small>sem data</small></div>
+    <div class="titulo"><h3>DevOpsDays São Paulo</h3><div class="chips"><span class='chip'>❔ aguardando data</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>data não anunciada</b></td></tr><tr><th>🏷️ Tema</th><td>DevOps, cultura, automação</td></tr><tr><th>📍 Local</th><td>São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Barato (evento da comunidade)</td></tr><tr><th>🎯 Para você</th><td>Muito alta. DevOps e automação</td></tr><tr><th>🔁 Próxima edição</th><td>Última edição em nov/2025. Edição 2026 ainda sem data no site oficial</td></tr></table>
+  
+  <a class="botao" href="https://devopsdays.org/events/" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento ">
+  <header><div class='cal sem'><b>?</b><small>sem data</small></div>
+    <div class="titulo"><h3>H2HC — Hackers to Hackers Conference</h3><div class="chips"><span class='chip'>❔ aguardando data</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>data não anunciada</b></td></tr><tr><th>🏷️ Tema</th><td>Segurança da informação</td></tr><tr><th>📍 Local</th><td>São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Pago</td></tr><tr><th>🎯 Para você</th><td>Média. Segurança, ligado ao seu trabalho de hardening</td></tr><tr><th>🔁 Próxima edição</th><td>Última edição confirmada em dez/2024. Sem data nova encontrada</td></tr></table>
+  
+  <a class="botao" href="https://www.h2hc.com.br/" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article></div>
+<div class='secao' id='sec-ev-passou'><span class='ic'>✔</span><div><h2>Já aconteceram em 2026</h2><p class='muted'>Voltam no ano que vem. O radar avisa quando a nova data aparecer no site.</p></div></div>
+<div class="grid">
+<article class="card cat-evento apagado">
+  <header><div class='cal'><span>out</span><b>6</b><small>2026</small></div>
+    <div class="titulo"><h3>Futurecom + Data Center World Brazil</h3><div class="chips"><span class='chip'>✔ já aconteceu</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>6 a 8/10/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Infraestrutura, data center, telecom, IA</td></tr><tr><th>📍 Local</th><td>São Paulo Expo</td></tr><tr><th>💰 Ingresso</th><td>Feira gratuita com credenciamento; congresso pago</td></tr><tr><th>🎯 Para você</th><td>Média. Infraestrutura e data center</td></tr><tr><th>🔁 Próxima edição</th><td>5 a 7 de outubro de 2027 (já anunciado no site)</td></tr></table>
+  <div class='visto'><h4>👀 Datas vistas no site hoje</h4><p>5 a 7 de outubro de 2027</p></div>
+  <a class="botao" href="https://www.futurecom.com.br/" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento apagado">
+  <header><div class='cal'><span>set</span><b>26</b><small>2026</small></div>
+    <div class="titulo"><h3>KCD São Paulo — Kubernetes Community Days</h3><div class="chips"><span class='chip'>✔ já aconteceu</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>26/09/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Kubernetes, GitOps, observabilidade</td></tr><tr><th>📍 Local</th><td>São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Barato (evento da comunidade CNCF)</td></tr><tr><th>🎯 Para você</th><td>Muito alta. Kubernetes, igual à CKA</td></tr><tr><th>🔁 Próxima edição</th><td>Costuma ser em setembro. Vale submeter palestra no call for papers</td></tr></table>
+  
+  <a class="botao" href="https://sessionize.com/kcd-sao-paulo-2026" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento apagado">
+  <header><div class='cal'><span>set</span><b>23</b><small>2026</small></div>
+    <div class="titulo"><h3>TDC — The Developer&#x27;s Conference São Paulo</h3><div class="chips"><span class='chip'>✔ já aconteceu</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>23 a 25/09/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Desenvolvimento, DevOps, cloud, IA (24 trilhas)</td></tr><tr><th>📍 Local</th><td>Pro Magno, São Paulo (presencial e online)</td></tr><tr><th>💰 Ingresso</th><td>Pago, por trilha/dia</td></tr><tr><th>🎯 Para você</th><td>Alta. Tem trilhas de DevOps, cloud e segurança</td></tr><tr><th>🔁 Próxima edição</th><td>Costuma ser em setembro</td></tr></table>
+  
+  <a class="botao" href="https://thedevconf.com/" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento apagado">
+  <header><div class='cal'><span>set</span><b>3</b><small>2026</small></div>
+    <div class="titulo"><h3>AWS Summit São Paulo</h3><div class="chips"><span class='chip'>✔ já aconteceu</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>03/09/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Cloud AWS, IA</td></tr><tr><th>📍 Local</th><td>São Paulo Expo</td></tr><tr><th>💰 Ingresso</th><td>Gratuito (lotou em 2026)</td></tr><tr><th>🎯 Para você</th><td>Média. Maior evento de cloud do ano em SP</td></tr><tr><th>🔁 Próxima edição</th><td>Costuma ser entre agosto e setembro. Inscreva-se assim que abrir</td></tr></table>
+  <div class='visto'><h4>👀 Datas vistas no site hoje</h4><p>3 de setembro de 2026 | 2 de setembro de 2026</p></div>
+  <a class="botao" href="https://aws.amazon.com/pt/events/summits/sao-paulo/" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article>
+<article class="card cat-evento apagado">
+  <header><div class='cal'><span>mai</span><b>29</b><small>2026</small></div>
+    <div class="titulo"><h3>Zabbix Conference Latam</h3><div class="chips"><span class='chip'>✔ já aconteceu</span><span class='chip'>🏛️ fonte oficial</span></div></div>
+  </header>
+  <table><tr><th>🗓️ Quando</th><td><b>29 a 30/05/2026</b></td></tr><tr><th>🏷️ Tema</th><td>Monitoramento</td></tr><tr><th>📍 Local</th><td>Hotel Wyndham Ibirapuera, São Paulo</td></tr><tr><th>💰 Ingresso</th><td>Pago (esgotou em 2026)</td></tr><tr><th>🎯 Para você</th><td>Alta. Monitoramento, próximo do seu trabalho com Nagios XI</td></tr><tr><th>🔁 Próxima edição</th><td>Costuma ser em maio. Compre cedo, esgota</td></tr></table>
+  
+  <a class="botao" href="https://www.zabbix.com/br/events" target="_blank" rel="noopener">🔗 Site do evento</a>
+</article></div>
+<div class="box" style="margin-top:20px"><b>🔎 Onde achar mais eventos</b><ul class="sem-marca"><li>🔗 <a href='https://agenda-tech-brasil-site.js.org/' target='_blank' rel='noopener'>Agenda Tech Brasil (comunidade)</a></li><li>🔗 <a href='https://dev.events/SA/BR/Sao_Paulo/devops' target='_blank' rel='noopener'>dev.events — DevOps em São Paulo</a></li><li>🔗 <a href='https://www.sympla.com.br/eventos/sao-paulo-sp/tecnologia' target='_blank' rel='noopener'>Sympla — tecnologia em São Paulo</a></li></ul></div>
+</section>
 <div class="box" style="margin-top:32px"><b>🔎 Como ler os ícones</b>
 <div class="legenda"><span>💲 preço</span><span>✔ lido do site hoje</span><span>ℹ valor de referência (o site não mostra preço)</span>
 <span>🏷️ desconto</span><span>💳 parcelamento</span><span>👀 capturado do site hoje</span><span>💬 trecho de promoção</span>
-<span>🖥️ prova prática</span><span>📝 múltipla escolha</span><span>⭐ ordem sugerida</span><span>⚠️ ponto de atenção</span></div>
+<span>🖥️ prova prática</span><span>📝 múltipla escolha</span><span>⭐ ordem sugerida</span><span>⚠️ ponto de atenção</span>
+<span>🔜 evento próximo</span><span>🏛️ fonte oficial</span><span>🔁 fonte agregadora</span></div>
 <p class="muted">Preços em reais = dólar comercial × (1 + IOF de 3.5%). A fatura usa a cotação do dia do pagamento.
-Formato e tempo de estudo vêm do catalogo.yaml. Confira sempre a página oficial antes de comprar.</p></div>
+Formato, tempo de estudo e eventos vêm do catalogo.yaml. Confira sempre a página oficial antes de comprar.</p></div>
 </main></body></html>

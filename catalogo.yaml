@@ -334,3 +334,145 @@ itens:
       - Verifique se há curso de DevOps/Cloud com disciplinas práticas
     fontes:
       - url: https://www.uninter.com/pos-graduacao/
+
+# ================== EVENTOS DE TECNOLOGIA EM SP ==================
+# data_inicio/data_fim: datas confirmadas (deixe vazio se não anunciada).
+# monitorar: o robô visita o site todo dia e avisa quando aparecer
+#            ou mudar uma data com ano (ex.: "10 de novembro de 2026").
+# confianca: "oficial" (site do organizador) ou "agregador" (confirme).
+
+eventos_links_uteis:
+  - {nome: "Agenda Tech Brasil (comunidade)", url: "https://agenda-tech-brasil-site.js.org/"}
+  - {nome: "dev.events — DevOps em São Paulo", url: "https://dev.events/SA/BR/Sao_Paulo/devops"}
+  - {nome: "Sympla — tecnologia em São Paulo", url: "https://www.sympla.com.br/eventos/sao-paulo-sp/tecnologia"}
+
+eventos:
+  - id: redhat_connect_sp
+    nome: Red Hat Summit Connect São Paulo
+    tema: Linux, Ansible, OpenShift, IA
+    data_inicio: 2026-11-10
+    local: Transamerica Expo Center, São Paulo
+    preco: Inscrição no site da Red Hat (confirme se é gratuito)
+    relevancia: Alta. Conversa direta com a Red Hat sobre RHCSA/RHCE e Ansible Automation Platform
+    url: https://www.redhat.com/en/summit/connect/latam/sao-paulo-2026
+    confianca: oficial
+    monitorar: true
+
+  - id: platformcon_sp
+    nome: PlatformCon Live Day São Paulo
+    tema: Engenharia de plataforma, DevOps
+    data_inicio: 2026-11-07
+    local: São Paulo
+    preco: Confira no site
+    relevancia: Alta. Platform engineering, Kubernetes e automação
+    url: https://platformcon.com/
+    confianca: oficial
+    monitorar: true
+
+  - id: devfest_gdg_cloud_sp
+    nome: DevFest 2026 — GDG Cloud São Paulo
+    tema: Google Cloud, IA, comunidade
+    data_inicio: 2026-11-28
+    local: FIAP Paulista, São Paulo
+    preco: Inscrição pelo Sympla
+    relevancia: Média. Cloud e comunidade, bom para networking
+    url: https://www.sympla.com.br/evento/devfest-2026-code-connect-celebrate/3567214
+    confianca: oficial
+    monitorar: true
+
+  - id: sreday_campinas
+    nome: SREday Campinas
+    tema: SRE, observabilidade, DevOps
+    data_inicio: 2026-12-02
+    data_fim: 2026-12-03
+    local: Campinas (interior de SP)
+    preco: Confira no site
+    relevancia: Alta. Tema SRE, igual ao seu cargo
+    url: https://sreday.com/
+    confianca: agregador
+    monitorar: false  # a página lista outros eventos e confunde a data
+
+  - id: zabbix_latam
+    nome: Zabbix Conference Latam
+    tema: Monitoramento
+    data_inicio: 2026-05-29
+    data_fim: 2026-05-30
+    local: Hotel Wyndham Ibirapuera, São Paulo
+    preco: Pago (esgotou em 2026)
+    relevancia: Alta. Monitoramento, próximo do seu trabalho com Nagios XI
+    proxima_edicao: Costuma ser em maio. Compre cedo, esgota
+    url: https://www.zabbix.com/br/events
+    confianca: oficial
+    monitorar: false  # a página lista outros eventos e confunde a data
+
+  - id: aws_summit_sp
+    nome: AWS Summit São Paulo
+    tema: Cloud AWS, IA
+    data_inicio: 2026-09-03
+    local: São Paulo Expo
+    preco: Gratuito (lotou em 2026)
+    relevancia: Média. Maior evento de cloud do ano em SP
+    proxima_edicao: Costuma ser entre agosto e setembro. Inscreva-se assim que abrir
+    url: https://aws.amazon.com/pt/events/summits/sao-paulo/
+    confianca: oficial
+    monitorar: true
+
+  - id: tdc_sp
+    nome: TDC — The Developer's Conference São Paulo
+    tema: Desenvolvimento, DevOps, cloud, IA (24 trilhas)
+    data_inicio: 2026-09-23
+    data_fim: 2026-09-25
+    local: Pro Magno, São Paulo (presencial e online)
+    preco: Pago, por trilha/dia
+    relevancia: Alta. Tem trilhas de DevOps, cloud e segurança
+    proxima_edicao: Costuma ser em setembro
+    url: https://thedevconf.com/
+    confianca: oficial
+    monitorar: true
+
+  - id: kcd_sp
+    nome: KCD São Paulo — Kubernetes Community Days
+    tema: Kubernetes, GitOps, observabilidade
+    data_inicio: 2026-09-26
+    local: São Paulo
+    preco: Barato (evento da comunidade CNCF)
+    relevancia: Muito alta. Kubernetes, igual à CKA
+    proxima_edicao: Costuma ser em setembro. Vale submeter palestra no call for papers
+    url: https://sessionize.com/kcd-sao-paulo-2026
+    confianca: oficial
+    monitorar: false
+
+  - id: futurecom
+    nome: Futurecom + Data Center World Brazil
+    tema: Infraestrutura, data center, telecom, IA
+    data_inicio: 2026-10-06
+    data_fim: 2026-10-08
+    local: São Paulo Expo
+    preco: Feira gratuita com credenciamento; congresso pago
+    relevancia: Média. Infraestrutura e data center
+    proxima_edicao: 5 a 7 de outubro de 2027 (já anunciado no site)
+    url: https://www.futurecom.com.br/
+    confianca: oficial
+    monitorar: true
+
+  - id: devopsdays_sp
+    nome: DevOpsDays São Paulo
+    tema: DevOps, cultura, automação
+    local: São Paulo
+    preco: Barato (evento da comunidade)
+    relevancia: Muito alta. DevOps e automação
+    proxima_edicao: Última edição em nov/2025. Edição 2026 ainda sem data no site oficial
+    url: https://devopsdays.org/events/
+    confianca: oficial
+    monitorar: false
+
+  - id: h2hc
+    nome: H2HC — Hackers to Hackers Conference
+    tema: Segurança da informação
+    local: São Paulo
+    preco: Pago
+    relevancia: Média. Segurança, ligado ao seu trabalho de hardening
+    proxima_edicao: Última edição confirmada em dez/2024. Sem data nova encontrada
+    url: https://www.h2hc.com.br/
+    confianca: oficial
+    monitorar: false

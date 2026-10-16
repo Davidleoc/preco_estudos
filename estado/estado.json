@@ -30,6 +30,10 @@
    "campos": {},
    "trechos": []
   },
+  "terraform#0": {
+   "campos": {},
+   "trechos": []
+  },
   "mongodb_dba#0": {
    "campos": {},
    "trechos": []
@@ -46,7 +50,7 @@
   },
   "cambly#0": {
    "campos": {
-    "planos_de_por": null
+    "planos_de_por": "R$98 /mês R$55 | R$273 /mês R$154 | R$398 /mês R$224"
    },
    "trechos": []
   },
@@ -72,6 +76,42 @@
   },
   "uninter#0": {
    "campos": {},
+   "trechos": []
+  },
+  "redhat_connect_sp#0": {
+   "campos": {
+    "datas_no_site": "November 10, 2026 | 10 de novembro de 2026"
+   },
+   "trechos": []
+  },
+  "platformcon_sp#0": {
+   "campos": {
+    "datas_no_site": "28 October 2026 | 7 November 2026 | 24 February 2027"
+   },
+   "trechos": []
+  },
+  "devfest_gdg_cloud_sp#0": {
+   "campos": {
+    "datas_no_site": null
+   },
+   "trechos": []
+  },
+  "aws_summit_sp#0": {
+   "campos": {
+    "datas_no_site": "3 de setembro de 2026 | 2 de setembro de 2026"
+   },
+   "trechos": []
+  },
+  "tdc_sp#0": {
+   "campos": {
+    "datas_no_site": null
+   },
+   "trechos": []
+  },
+  "futurecom#0": {
+   "campos": {
+    "datas_no_site": "5 a 7 de outubro de 2027"
+   },
    "trechos": []
   }
  },
@@ -159,6 +199,42 @@
    {
     "data": "2026-10-16",
     "valor": "30% OFF"
+   }
+  ],
+  "redhat_connect_sp#0.datas_no_site": [
+   {
+    "data": "2026-10-16",
+    "valor": "November 10, 2026 | 10 de novembro de 2026"
+   }
+  ],
+  "platformcon_sp#0.datas_no_site": [
+   {
+    "data": "2026-10-16",
+    "valor": "28 October 2026 | 7 November 2026 | 24 February 2027"
+   }
+  ],
+  "sreday_campinas#0.datas_no_site": [
+   {
+    "data": "2026-10-16",
+    "valor": "February 5 2025 | November 20 2024 | October 24 2024"
+   }
+  ],
+  "zabbix_latam#0.datas_no_site": [
+   {
+    "data": "2026-10-16",
+    "valor": "22 Outubro 2026 | 22 Out, 2026 | 24 Outubro 2026"
+   }
+  ],
+  "aws_summit_sp#0.datas_no_site": [
+   {
+    "data": "2026-10-16",
+    "valor": "3 de setembro de 2026 | 2 de setembro de 2026"
+   }
+  ],
+  "futurecom#0.datas_no_site": [
+   {
+    "data": "2026-10-16",
+    "valor": "5 a 7 de outubro de 2027"
    }
   ]
  },
