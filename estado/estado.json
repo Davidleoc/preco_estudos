@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-18",
+ "atualizado_em": "2026-10-19",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -88,7 +88,7 @@
   },
   "devfest_gdg_cloud_sp#0": {
    "campos": {
-    "datas_no_site": null
+    "datas_no_site": "28 de novembro de 2026"
    },
    "trechos": []
   },
@@ -232,7 +232,13 @@
     "data": "2026-10-16",
     "valor": "5 a 7 de outubro de 2027"
    }
+  ],
+  "devfest_gdg_cloud_sp#0.datas_no_site": [
+   {
+    "data": "2026-10-19",
+    "valor": "28 de novembro de 2026"
+   }
   ]
  },
- "dolar": 5.088528
+ "dolar": 5.072543
 }
