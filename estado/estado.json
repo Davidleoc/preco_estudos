@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-24",
+ "atualizado_em": "2026-10-25",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -109,11 +109,9 @@
   }
  },
  "cupons_lf": [
+  "COMBUNDLE25",
   "COMTECHIES20",
-  "DCUBE30",
-  "OCT26CYBERCT",
-  "OCT26NONCYBERCT",
-  "OCT26THRIVECT"
+  "DCUBE30"
  ],
  "historico": {
   "cka#0.preco_prova_usd": [
@@ -237,5 +235,5 @@
    }
   ]
  },
- "dolar": 5.04284
+ "dolar": 5.044304
 }
