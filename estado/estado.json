@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-26",
+ "atualizado_em": "2026-10-27",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -81,7 +81,7 @@
   },
   "platformcon_sp#0": {
    "campos": {
-    "datas_no_site": "28 October 2026 | 7 November 2026 | 24 February 2027"
+    "datas_no_site": "7 November 2026 | 24 February 2027 | 22 June 2027"
    },
    "trechos": []
   },
@@ -204,6 +204,10 @@
    {
     "data": "2026-10-16",
     "valor": "28 October 2026 | 7 November 2026 | 24 February 2027"
+   },
+   {
+    "data": "2026-10-27",
+    "valor": "7 November 2026 | 24 February 2027 | 22 June 2027"
    }
   ],
   "sreday_campinas#0.datas_no_site": [
@@ -237,5 +241,5 @@
    }
   ]
  },
- "dolar": 4.995042
+ "dolar": 5.431867
 }
