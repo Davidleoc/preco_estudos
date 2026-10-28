@@ -1,12 +1,13 @@
 {
- "atualizado_em": "2026-10-27",
+ "atualizado_em": "2026-10-28",
  "fontes": {
   "cka#0": {
    "campos": {
     "preco_prova_usd": "445",
-    "banner_promo": null
+    "banner_promo": "2 Days ONLY: Spooky Flash Savings | 35% off sitewide"
    },
    "trechos": [
+    "…- Linux Foundation - Education Skip to main content 👻 2 Days ONLY: Spooky Flash Savings | 35% off sitewide ➜ CLAIM TREATS NOW Training & Certification Catalog See Full Catalog Certifications Instructor-led C…",
     "…Great exam as a new Kubernetes beginner. The feeling of doing some tricky tasks with very limited time, reflecting real world work situations in an exam is what many other certification exams lack these days. I f…",
     "…onals. 1 2 3 4 5 6 7 8 9 $445 Exam only Enroll Today Get a Quote Bundle & Save Best Value Save 40% on CKA with THRIVE-ONE Annual Subscription Bundle $625 Exam + Full Access Subscription Buy Value Bundle Bun…"
    ]
@@ -14,9 +15,10 @@
   "lfcs#0": {
    "campos": {
     "preco_prova_usd": "445",
-    "banner_promo": null
+    "banner_promo": "2 Days ONLY: Spooky Flash Savings | 35% off sitewide"
    },
    "trechos": [
+    "…- Linux Foundation - Education Skip to main content 👻 2 Days ONLY: Spooky Flash Savings | 35% off sitewide ➜ CLAIM TREATS NOW Training & Certification Catalog See Full Catalog Certifications Instructor-led C…",
     "…nd it. 1 2 3 4 5 6 7 8 9 $445 Exam only Enroll Today Get a Quote Bundle & Save Best Value Save 40% on LFCS with THRIVE-ONE Annual Subscription Bundle $625 Exam + Full Access Subscription Buy Value Bundle Bu…"
    ]
   },
@@ -35,9 +37,10 @@
   "pca#0": {
    "campos": {
     "preco_prova_usd": "250",
-    "banner_promo": null
+    "banner_promo": "2 Days ONLY: Spooky Flash Savings | 35% off sitewide"
    },
    "trechos": [
+    "…- Linux Foundation - Education Skip to main content 👻 2 Days ONLY: Spooky Flash Savings | 35% off sitewide ➜ CLAIM TREATS NOW Training & Certification Catalog See Full Catalog Certifications Instructor-led C…",
     "…guage. 1 2 3 4 5 6 7 8 9 $250 Exam only Enroll Today Get a Quote Bundle & Save Best Value Save 40% on PCA with the THRIVE-ONE Annual Subscription Bundle $495 Exam + Full Access Subscription Buy Value Bundle…"
    ]
   },
@@ -126,6 +129,10 @@
    {
     "data": "2026-10-16",
     "valor": "Cybersecurity Awareness Month: Save Up to 40%!"
+   },
+   {
+    "data": "2026-10-28",
+    "valor": "2 Days ONLY: Spooky Flash Savings | 35% off sitewide"
    }
   ],
   "lfcs#0.preco_prova_usd": [
@@ -138,6 +145,10 @@
    {
     "data": "2026-10-16",
     "valor": "Cybersecurity Awareness Month: Save Up to 40%!"
+   },
+   {
+    "data": "2026-10-28",
+    "valor": "2 Days ONLY: Spooky Flash Savings | 35% off sitewide"
    }
   ],
   "pca#0.preco_prova_usd": [
@@ -150,6 +161,10 @@
    {
     "data": "2026-10-16",
     "valor": "Cybersecurity Awareness Month: Save Up to 40%!"
+   },
+   {
+    "data": "2026-10-28",
+    "valor": "2 Days ONLY: Spooky Flash Savings | 35% off sitewide"
    }
   ],
   "cambly#0.planos_de_por": [
@@ -241,5 +256,5 @@
    }
   ]
  },
- "dolar": 5.431867
+ "dolar": 5.348375
 }
