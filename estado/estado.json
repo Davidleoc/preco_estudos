@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-03",
+ "atualizado_em": "2026-11-04",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -49,6 +49,26 @@
     "…e biggest discount is just one click away! The biggest discount is just one click away! • Black Friday is here: 50% OFF Cambly! • Termos & Condições Aproveitar Método Tutores Currículos Recursos Grátis Pro Aulas…"
    ]
   },
+  "impacta_cloud_devops#0": {
+   "campos": {
+    "parcela_brl": "285,43",
+    "parcelas": "36",
+    "desconto": "30% OFF"
+   },
+   "trechos": [
+    "…Todos os direitos reservados. Powered by J&A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…"
+   ]
+  },
+  "impacta_infra_cloud#0": {
+   "campos": {
+    "parcela_brl": "285,43",
+    "parcelas": "36",
+    "desconto": "30% OFF"
+   },
+   "trechos": [
+    "…Todos os direitos reservados. Powered by J&A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…"
+   ]
+  },
   "uninter#0": {
    "campos": {},
    "trechos": []
@@ -91,7 +111,7 @@
   }
  },
  "cupons_lf": [
-  "COMBUNDLE25",
+  "40KUBE26CT",
   "COMTECHIES20",
   "DCUBE30"
  ],
@@ -233,5 +253,5 @@
    }
   ]
  },
- "dolar": 5.43751
+ "dolar": 5.48609
 }
