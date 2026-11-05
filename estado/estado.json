@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-04",
+ "atualizado_em": "2026-11-05",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -51,22 +51,22 @@
   },
   "impacta_cloud_devops#0": {
    "campos": {
-    "parcela_brl": "285,43",
-    "parcelas": "36",
-    "desconto": "30% OFF"
+    "parcela_brl": null,
+    "parcelas": null,
+    "desconto": null
    },
    "trechos": [
-    "…Todos os direitos reservados. Powered by J&A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…"
+    "…bal Matricule-se Nov 30% — Dez 20% — Jan valor regular na parcela Ver os lotes Novembro · 30% off · até 30/11, 23:59 Dezembro · 20% off · até 31/12, 23:59 Janeiro · valor regular -- dias -- horas -- min -- s…"
    ]
   },
   "impacta_infra_cloud#0": {
    "campos": {
-    "parcela_brl": "285,43",
-    "parcelas": "36",
-    "desconto": "30% OFF"
+    "parcela_brl": null,
+    "parcelas": null,
+    "desconto": null
    },
    "trechos": [
-    "…Todos os direitos reservados. Powered by J&A Digital Marketing Matrículas abertas Garanta 30% OFF na sua pós em tecnologia MBAs práticos, professores atuantes no mercado e certificação em 9 meses. Oferta por…"
+    "…bal Matricule-se Nov 30% — Dez 20% — Jan valor regular na parcela Ver os lotes Novembro · 30% off · até 30/11, 23:59 Dezembro · 20% off · até 31/12, 23:59 Janeiro · valor regular -- dias -- horas -- min -- s…"
    ]
   },
   "uninter#0": {
@@ -253,5 +253,5 @@
    }
   ]
  },
- "dolar": 5.48609
+ "dolar": 5.468653
 }
