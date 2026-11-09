@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-08",
+ "atualizado_em": "2026-11-09",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -46,7 +46,7 @@
     "planos_de_por": null
    },
    "trechos": [
-    "…e biggest discount is just one click away! The biggest discount is just one click away! • Black Friday is here: 50% OFF Cambly! • Termos & Condições Aproveitar Método Tutores Currículos Recursos Grátis Pro Aulas…"
+    "English Tutors Online - Cambly Get your 1 FREE MONTH before it’s gone ⏰ Limited time! Get your 1 FREE MONTH before it’s gone ⏰ Limited time! • Black Friday deal: up to 50% off 🎉 • Termos & Condi…"
    ]
   },
   "impacta_cloud_devops#0": {
@@ -81,7 +81,7 @@
   },
   "platformcon_sp#0": {
    "campos": {
-    "datas_no_site": "7 November 2026 | 24 February 2027 | 22 June 2027"
+    "datas_no_site": "24 February 2027 | 22 June 2027 | 24 June 2027"
    },
    "trechos": []
   },
@@ -220,6 +220,10 @@
    {
     "data": "2026-10-27",
     "valor": "7 November 2026 | 24 February 2027 | 22 June 2027"
+   },
+   {
+    "data": "2026-11-09",
+    "valor": "24 February 2027 | 22 June 2027 | 24 June 2027"
    }
   ],
   "sreday_campinas#0.datas_no_site": [
@@ -253,5 +257,5 @@
    }
   ]
  },
- "dolar": 5.502723
+ "dolar": 5.504608
 }
