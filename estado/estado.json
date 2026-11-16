@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-15",
+ "atualizado_em": "2026-11-16",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -46,7 +46,7 @@
     "planos_de_por": null
    },
    "trechos": [
-    "…e biggest discount is just one click away! The biggest discount is just one click away! • Black Friday deal: up to 50% off 🎉 • Termos & Condições Aproveitar Método Tutores Currículos Recursos Grátis Pro Aulas em…"
+    "English Tutors Online - Cambly Get your 60-min bonus before it’s gone ⏰ Limited time! Get your 60-min bonus before it’s gone ⏰ Limited time! • Black Friday deal: up to 50% off 🎉 • Termos & Condi…"
    ]
   },
   "impacta_cloud_devops#0": {
@@ -105,7 +105,7 @@
   },
   "futurecom#0": {
    "campos": {
-    "datas_no_site": "5 a 7 de outubro de 2027"
+    "datas_no_site": "5 a 7 de outubro, 2027 | 5 a 7 de outubro de 2027"
    },
    "trechos": []
   }
@@ -248,6 +248,10 @@
    {
     "data": "2026-10-16",
     "valor": "5 a 7 de outubro de 2027"
+   },
+   {
+    "data": "2026-11-16",
+    "valor": "5 a 7 de outubro, 2027 | 5 a 7 de outubro de 2027"
    }
   ],
   "devfest_gdg_cloud_sp#0.datas_no_site": [
@@ -257,5 +261,5 @@
    }
   ]
  },
- "dolar": 5.648053
+ "dolar": 5.663557
 }
