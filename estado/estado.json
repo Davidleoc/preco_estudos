@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-26",
+ "atualizado_em": "2026-11-27",
  "fontes": {
   "cka#0": {
    "campos": {
@@ -30,10 +30,6 @@
    "campos": {},
    "trechos": []
   },
-  "mongodb_dba#0": {
-   "campos": {},
-   "trechos": []
-  },
   "pca#0": {
    "campos": {
     "preco_prova_usd": "250",
@@ -49,7 +45,7 @@
     "planos_de_por": null
    },
    "trechos": [
-    "English Tutors Online - Cambly Black Friday ends tomorrow 🚨 Time to save big! Black Friday ends tomorrow 🚨 Time to save big! • Black Friday deal: up to 5…"
+    "English Tutors Online - Cambly Black Friday ends tonight 🚨 Final hours to join! Black Friday ends tonight 🚨 Final hours to join! • Black Friday deal: up…"
    ]
   },
   "impacta_cloud_devops#0": {
@@ -114,7 +110,10 @@
   }
  },
  "cupons_lf": [
-  "COMBUNDLE25",
+  "BFCM26BUNCT",
+  "BFCM26CCCT",
+  "BFCM26ILTCT",
+  "BFCM26K8SCT",
   "COMTECHIES20",
   "DCUBE30"
  ],
@@ -264,5 +263,5 @@
    }
   ]
  },
- "dolar": 5.884106
+ "dolar": 5.766598
 }
